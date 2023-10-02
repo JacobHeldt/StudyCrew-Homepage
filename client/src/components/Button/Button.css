@@ -1,0 +1,16 @@
+
+.button {
+    background-color: var(--primary-color); /* Use your primary color here */
+    color: #fff;
+    /* ...other styles... */
+  }
+  
+  .button-outline {
+    color: var(--primary-color); /* Use your primary color here */
+    border: 1px solid var(--primary-color); /* Use your primary color here */
+  }
+  
+  .button-outline:hover {
+    background-color: var(--primary-color); /* Use your primary color here */
+    color: #fff;
+  }
