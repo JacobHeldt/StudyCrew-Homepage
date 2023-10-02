@@ -1,42 +1,65 @@
 /* Font Imports */
-/* Rubik */
+/* Importing Rubik font for headings */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&display=swap');
-/* DM Sans */
+
+/* Importing DM Sans font for standard text */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,600&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&display=swap');
 
 /* Define Variables */
 :root {
   --primary-color: #3A86FF;
+  --primary-text-color: #0C1B33;
+  --secondary-text-color: #434C59;
   --heading-font: 'Rubik', sans-serif;
   --text-font: 'DM Sans', sans-serif;
 }
 
-/* Define standard fonts for text */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--heading-font);
-}
-
-body, p, span, button, input, textarea {
-  font-family: var(--text-font);
-}
-
-.heading-font {
-  font-family: 'Rubik', sans-serif;
-}
-.text-font {
-  font-family: 'DM Sans', sans-serif;
-}
-
+/* Global Styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased ;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Typography */
+/* Applying heading font and primary text color to headings and buttons */
+h1, h2, h3, h4, h5, h6, button {
+  font-family: var(--heading-font);
+  color: var(--primary-text-color);
+}
+
+/* Applying text font to body, paragraphs, spans, inputs, and textareas */
+body, p, span, input, textarea {
+  font-family: var(--text-font);
+}
+
+/* Utility Classes */
+/* Utility class for applying heading font */
+.heading-font {
+  font-family: var(--heading-font);
+}
+
+/* Utility class for applying text font */
+.text-font {
+  font-family: var(--text-font);
+}
+
+/* Utility class for applying primary text color */
+.primary-text-color {
+  color: var(--primary-text-color);
+}
+
+/* Utility class for applying secondary text color */
+.secondary-text-color {
+  color: var(--secondary-text-color);
+}
+
+/* Class for making sure icons are in line with text */
+.icon-inline {
+  vertical-align: middle;
 }

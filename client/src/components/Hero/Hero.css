@@ -11,7 +11,7 @@
     font-size: 3rem;
     font-weight: 500; 
     letter-spacing: -0.01em; 
-    color: #333; 
+    /* color: #333;  */
 }
 
 .title-sm {
@@ -39,14 +39,15 @@
     margin: auto;
     margin-top: 1.5rem; 
     max-width: 60rem; 
-    font-size: 1.125rem; 
+    font-size: 20px; 
     letter-spacing: -0.01em;
-    color: #555; 
+    color: var(--secondary-text-color); 
 }
 
 .button-group {
-margin-top: 2.5rem;
-display: flex;
-justify-content: center;
-gap: 1.5rem;
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
+

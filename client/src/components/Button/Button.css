@@ -1,16 +1,45 @@
-
+/* Base styling for the button component */
 .button {
-    background-color: var(--primary-color); /* Use your primary color here */
-    color: #fff;
-    /* ...other styles... */
-  }
-  
-  .button-outline {
-    color: var(--primary-color); /* Use your primary color here */
-    border: 1px solid var(--primary-color); /* Use your primary color here */
-  }
-  
-  .button-outline:hover {
-    background-color: var(--primary-color); /* Use your primary color here */
-    color: #fff;
-  }
+    background-color: var(--primary-color); /* Primary color as background */
+    color: #fff; /* White text color */
+    border: none; /* No border */
+    padding: 10px 22px; /* Standard padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Standard font size */
+    font-weight: 600; /* Semi-bold font weight */
+    transition: all 0.15s ease-in-out; /* Smooth transition for all properties */
+}
+
+/* Styling for the button component on hover */
+.button:hover {
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 10px; /* Increased border radius on hover */
+    /* Retaining the same transition property for consistency */
+}
+
+/* Styling for the larger variant of the button component */
+.button-big {
+    font-size: 18px; /* Larger font size */
+    padding: 12px 24px; /* Increased padding */
+}
+
+/* Styling for the outlined variant of the button component */
+.button-outline {
+    color: var(--primary-color); /* Primary color as text color */
+    border: 1px solid var(--primary-color); /* Border with primary color */
+    background: none; /* Transparent background */
+    transition: all 0.2s ease; /* Smooth transition for all properties */
+}
+
+/* Styling for the larger, outlined variant of the button component */
+.button-big-outline {
+    font-size: 18px; /* Larger font size */
+    padding: 11px 23px; /* Increased padding */
+}
+
+/* Styling for the outlined button component on hover */
+.button-outline:hover {
+    border-radius: 10px; /* Increased border radius on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+    /* Retaining the same transition property for consistency */
+}
