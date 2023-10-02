@@ -3,51 +3,50 @@
     max-width: 71.25rem; 
     padding: 4rem 1rem;
     text-align: center;
-  }
-  
-  .title {
+}
+
+.title {
     margin: auto;
     max-width: 64rem; 
-    font-family: 'Display', sans-serif;
     font-size: 3rem;
     font-weight: 500; 
     letter-spacing: -0.01em; 
     color: #333; 
-  }
-  
-  .title-sm {
+}
+
+.title-sm {
     font-size: 4.5rem;
-  }
-  
-  .blue-wave {
+}
+
+.blue-wave {
     position: absolute;
     top: 66.66%; 
     left: 0;
     height: 0.58em;
     width: 100%;
     fill: rgba(173, 216, 230, 0.7); 
-  }
-  
-  .relative-span {
+}
+
+.relative-span {
     position: relative;
-  }
-  
-  .text-primary {
-    color: #007bff; 
-  }
-  
-  .description {
+}
+
+.text-primary {
+    color: var(--primary-color); 
+}
+
+.description {
     margin: auto;
     margin-top: 1.5rem; 
-    max-width: 30rem; 
+    max-width: 60rem; 
     font-size: 1.125rem; 
     letter-spacing: -0.01em;
     color: #555; 
-  }
-  
-  .button-group {
-    margin-top: 2.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-  }
+}
+
+.button-group {
+margin-top: 2.5rem;
+display: flex;
+justify-content: center;
+gap: 1.5rem;
+}
