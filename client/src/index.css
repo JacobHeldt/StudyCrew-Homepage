@@ -59,7 +59,3 @@ body, p, span, input, textarea {
   color: var(--secondary-text-color);
 }
 
-/* Class for making sure icons are in line with text */
-.icon-inline {
-  vertical-align: middle;
-}

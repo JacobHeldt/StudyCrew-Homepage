@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import Button from '../Button/Button';
 import './Hero.css'; // Importing styling specific to the Hero component
-import { FaChevronRight } from 'react-icons/fa';
+import { FaChevronRight, FaChevronDown } from 'react-icons/fa';
 
 /**
  * Hero Component
@@ -44,7 +44,7 @@ const Hero = () => {
             <Button size="big">Join Waitlist <FaChevronRight className="icon-inline" /></Button>
             </Link>
             <Link to="/waitlist">
-              <Button variant="outline" size="big-outline">Learn More</Button>
+              <Button variant="outline" size="big-outline">Learn More <FaChevronDown className="icon-inline" /></Button>
             </Link>
           </div>
         </div>
