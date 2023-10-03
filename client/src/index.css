@@ -8,6 +8,7 @@
 /* Define Variables */
 :root {
   --primary-color: #3A86FF;
+  --primary-gradient-color: #8338ec;
   --primary-text-color: #0C1B33;
   --secondary-text-color: #434C59;
   --heading-font: 'Rubik', sans-serif;
@@ -42,6 +43,13 @@ body, p, span, input, textarea {
 /* Utility class for applying heading font */
 .heading-font {
   font-family: var(--heading-font);
+}
+
+
+.text-gradient {
+  background: -webkit-linear-gradient(right, var(--primary-gradient-color), var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Utility class for applying text font */

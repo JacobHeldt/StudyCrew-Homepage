@@ -1,5 +1,6 @@
 // Importing necessary libraries and components
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import Button from '../Button/Button';
 import './Hero.css'; // Importing styling specific to the Hero component
 import { FaChevronRight, FaChevronDown } from 'react-icons/fa';
@@ -16,20 +17,44 @@ import { FaChevronRight, FaChevronDown } from 'react-icons/fa';
  * 
  * @returns {React.Element} The rendered Hero component.
  */
+
+
 const Hero = () => {
+
+    const [currentWord, setCurrentWord] = useState('Collaborative');
+    const words = ['Collaborative', 'Accessible', 'Engaging'];
+    const [opacity, setOpacity] = useState(1);
+
+    useEffect(() => {
+      const changeWord = () => {
+          setCurrentWord(prevWord => {
+              const nextIndex = (words.indexOf(prevWord) + 1) % words.length;
+              return words[nextIndex];
+          });
+          setOpacity(1); // Fade in the new word
+      };
+  
+      const interval = setInterval(() => {
+          setOpacity(0); // Fade out the current word
+          setTimeout(changeWord, 200); // Wait for half a second (500ms) to change the word
+      }, 3500);
+  
+      return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="hero-container">
           {/* Title with decorative SVG elements */}
           <h1 className="title title-sm">
             The{" "}
-            <span className="relative-span text-primary">
+            <span className="relative-span">
               <svg aria-hidden="true" viewBox="0 0 418 42" className="blue-wave" preserveAspectRatio="none"></svg>
               <span className="relative-span heading-font">Future </span>
             </span> 
             of Education is
-            <span className="relative-span text-primary">
+            <span className="relative-span">
               <svg aria-hidden="true" viewBox="0 0 418 42" className="blue-wave" preserveAspectRatio="none"></svg>
-              <span className="relative-span heading-font"> Collaborative</span>
+              <span className="relative-span heading-font text-transition text-gradient huge-font" style={{ opacity: opacity }}> {currentWord}</span>
             </span>
           </h1>
           

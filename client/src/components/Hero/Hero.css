@@ -8,10 +8,15 @@
 .title {
     margin: auto;
     max-width: 64rem; 
-    font-size: 3rem;
+    font-size: 70px;
     font-weight: 500; 
     letter-spacing: -0.01em; 
     /* color: #333;  */
+}
+
+
+.huge-font {
+    font-size: 80px;
 }
 
 .title-sm {
@@ -51,3 +56,19 @@
     gap: 1.5rem;
 }
 
+.text-transition {
+    transition: opacity 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.text-gradient {
+    animation: fadeIn 0.5s;
+}
