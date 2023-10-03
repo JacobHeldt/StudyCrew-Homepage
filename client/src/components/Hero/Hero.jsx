@@ -21,6 +21,7 @@ import { FaChevronRight, FaChevronDown } from 'react-icons/fa';
 
 const Hero = () => {
 
+    // Change word in header
     const [currentWord, setCurrentWord] = useState('Collaborative');
     const words = ['Collaborative', 'Accessible', 'Engaging'];
     const [opacity, setOpacity] = useState(1);
@@ -60,7 +61,7 @@ const Hero = () => {
           
           {/* Description with emphasized words */}
           <p className="description">
-            Opening doors to <b className="primary-text-color">accessible</b>, <b className="primary-text-color">collaborative</b> and <b className="primary-text-color">engaging</b> learning experiences
+            Opening doors to new learning experiences for everyone.
           </p>
           
           {/* Group of buttons with different styles and sizes */}
