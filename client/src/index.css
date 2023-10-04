@@ -13,6 +13,7 @@
   --secondary-text-color: #434C59;
   --heading-font: 'Rubik', sans-serif;
   --text-font: 'DM Sans', sans-serif;
+  --white-text-color: #F2F7FF;
 }
 
 /* Global Styles */
@@ -39,12 +40,31 @@ body, p, span, input, textarea {
   font-family: var(--text-font);
 }
 
+h3 {
+  font-family: var(--text-font);
+  font-weight: 300;
+  font-size: 22px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 50px;
+}
+
+p {
+  font-size: 19px;
+  letter-spacing: 0.1px;
+}
+
 /* Utility Classes */
 /* Utility class for applying heading font */
 .heading-font {
   font-family: var(--heading-font);
 }
 
+.white-text-color {
+  color: #F2F7FF
+}
 
 .text-gradient {
   background: -webkit-linear-gradient(right, var(--primary-gradient-color), var(--primary-color));

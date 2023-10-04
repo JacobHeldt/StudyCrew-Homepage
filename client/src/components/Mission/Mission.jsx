@@ -91,7 +91,17 @@ const Mission = (props) => {
 
          
     <div className='main-div'>
-      <h3 className='mission-header'>OUR MISSION</h3>
+      <div className='right-column'>
+        <h3 className='mission-header white-text-color'>OUR MISSION</h3>
+        <h2 className='mission-header white-text-color slogan'>We support education for all.</h2>
+        <p className='mission-text white-text-color'>
+        At StudyCrew, we’re on a mission to transform education. 
+        We want make education more accessible, collaborative, and engaging through innovative learning platforms. 
+        We’re dedicated to support students in their journey and empower them to explore their passions together. 
+        Our vision is to provide every student with the resources and community they need to reach their full potential.
+        </p>
+      </div>
+
      </div>
     
 
