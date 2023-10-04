@@ -11,14 +11,44 @@
 
 .chevron-gradient {
     position: relative;
-    top: -50px;
+    top: -7vh;
+    z-index: 5;
+}
+
+.chevron-white {
+    position: relative;
+    z-index: 3;
+    top: -26vh;
+}
+
+.second-chevron-gradient {
+    position: relative;
+    top: -45vh;
+    z-index: 5;
 }
 
 /* Define the gradient */
 .chevron-gradient stop:first-child {
-    stop-color: var(--primary-color);
+    stop-color: var(--primary-gradient-color);
 }
 
 .chevron-gradient stop:last-child {
-    stop-color: var(--primary-gradient-color);
+    stop-color: var(--primary-color);
+}
+
+/* Define the white chevron */
+.chevron-white stop:first-child {
+    stop-color: #ffffff;
+}
+
+.chevron-white stop:last-child {
+    stop-color: #ffffff;
+}
+
+.main-div {
+    position: relative;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-gradient-color));
+    height: 500px;
+    width: 100%;
+    top: -67vh;
 }
