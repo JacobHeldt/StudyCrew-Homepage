@@ -13,6 +13,7 @@ const Mission = (props) => {
         style={{ width: '100%' }} // This sets the width to 100%
         className='chevron-gradient'
         {...props}
+        preserveAspectRatio="none"
       >
         <path
           fill="url(#a)"
@@ -41,6 +42,7 @@ const Mission = (props) => {
       style={{ width: '100%' }} // This sets the width to 100%
       className='chevron-white'
       {...props}
+      preserveAspectRatio="none"
     >
       <path
         fill="url(#b)"
@@ -69,6 +71,7 @@ const Mission = (props) => {
         style={{ width: '100%' }} // This sets the width to 100%
         className='second-chevron-gradient'
         {...props}
+        preserveAspectRatio="none"
       >
         <path
           fill="url(#a)"
