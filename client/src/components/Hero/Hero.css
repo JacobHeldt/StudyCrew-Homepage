@@ -1,3 +1,4 @@
+/* Main container for the hero section */
 .hero-container {
     margin: auto;
     max-width: 71.25rem; 
@@ -5,24 +6,26 @@
     text-align: center;
 }
 
+/* Main title styles */
 .title {
     margin: auto;
     max-width: 64rem; 
     font-size: 70px;
     font-weight: 500; 
     letter-spacing: -0.01em; 
-    /* color: #333;  */
 }
 
-
+/* Larger font size for emphasis */
 .huge-font {
     font-size: 80px;
 }
 
+/* Smaller title variant */
 .title-sm {
     font-size: 4.5rem;
 }
 
+/* Blue wave SVG decoration for the title */
 .blue-wave {
     position: absolute;
     top: 66.66%; 
@@ -32,14 +35,17 @@
     fill: rgba(173, 216, 230, 0.7); 
 }
 
+/* Relative positioning container for inline elements */
 .relative-span {
     position: relative;
 }
 
+/* Primary color text for emphasis */
 .text-primary {
     color: var(--primary-color); 
 }
 
+/* Description text below the title */
 .description {
     margin: auto;
     margin-top: 1.5rem; 
@@ -49,6 +55,7 @@
     color: var(--secondary-text-color); 
 }
 
+/* Group of buttons below the description */
 .button-group {
     margin-top: 2.5rem;
     display: flex;
@@ -56,10 +63,12 @@
     gap: 1.5rem;
 }
 
+/* Transition effect for text opacity */
 .text-transition {
     transition: opacity 0.5s;
 }
 
+/* Fade-in animation for text */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -69,6 +78,7 @@
     }
 }
 
+/* Text gradient effect with fade-in animation */
 .text-gradient {
     animation: fadeIn 0.5s;
 }

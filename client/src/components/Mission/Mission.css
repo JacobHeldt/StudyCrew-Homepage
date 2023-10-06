@@ -1,14 +1,17 @@
+/* Root Variables: Define base colors for the theme */
 :root {
     --stop-color-1: #becbe1;
     --stop-color-2: #3833A6;
 }
 
+/* Chevron Styles */
 .chevron {
     width: 100%;
-    max-height: 50px; /* Adjust based on your needs */
+    max-height: 50px; 
     fill: url(#gradient);
 }
 
+/* Gradient background for the chevron */
 .chevron-gradient {
     position: absolute;
     top: 400px;
@@ -17,6 +20,7 @@
     z-index: 5;
 }
 
+/* White background for the chevron */
 .chevron-white {
     position: absolute;
     height: 200px;
@@ -24,6 +28,7 @@
     top: 450px;
 }
 
+/* Second gradient background for the chevron */
 .second-chevron-gradient {
     position: absolute;
     height: 200px;
@@ -31,26 +36,25 @@
     z-index: 5;
 }
 
-/* Define the gradient */
+/* Gradient color definitions for the chevron */
 .chevron-gradient stop:first-child {
     stop-color: var(--primary-gradient-color);
 }
-
 .chevron-gradient stop:last-child {
     stop-color: var(--primary-color);
 }
 
-/* Define the white chevron */
+/* White color definitions for the chevron */
 .chevron-white stop:first-child {
     stop-color: #ffffff;
 }
-
 .chevron-white stop:last-child {
     stop-color: #ffffff;
 }
 
+/* Main content container */
 .main-div {
-    display: flex; /* Add this */
+    display: flex;
     position: absolute;
     background: linear-gradient(to right, var(--primary-color), var(--primary-gradient-color));
     height: 83vh;
@@ -60,53 +64,54 @@
     z-index: 1;
 }
 
+/* Header inside the main content */
 .mission-header {
     position: relative;
     top: 20vh;
     margin-right: 5%;
 }
 
+/* Left column of the main content */
 .left-column {
     position: relative;
     width: 50%;
 }
 
+/* Slogan text style */
 .slogan {
     position: relative;
     top: 18vh;
     margin-right: 5%;
 }
 
+/* Mission description text style */
 .mission-text {
     position: relative;
     top: 15vh;
     margin-right: 5%;
 }
 
+/* Right column of the main content */
 .right-column {
     position: relative;
     width: 50%;
-    /* top: -50%; */
 }
 
+/* Logo styles with different positions and rotations */
 .logo-1 {
     position: relative;
     top: 8%;
     left: 8%;
     transform: rotate(-30deg);
 }
-
 .logo-2 {
     position: relative;
     top: 12%;
     left: 14%;
-    /* transform: rotate(30deg); */
 }
-
 .logo-3 {
     position: relative;
     top: -25%;
     left: 22%;
     transform: rotate(30deg);
 }
-
