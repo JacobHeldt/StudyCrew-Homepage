@@ -37,11 +37,11 @@ const Hero = () => {
   
       const interval = setInterval(() => {
           setOpacity(0); // Fade out the current word
-          setTimeout(changeWord, 200); // Wait for half a second (500ms) to change the word
+          setTimeout(changeWord, 200); 
       }, 3500);
   
       return () => clearInterval(interval);
-    }, []);
+  }, [words]);
 
     return (
         <div className="hero-container">
