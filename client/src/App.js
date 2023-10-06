@@ -1,10 +1,10 @@
 // React specific imports
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // Imports for styling
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import './index.css'; 
 
