@@ -92,21 +92,21 @@
 .logo-1 {
     position: relative;
     top: 8%;
-    left: 12%;
+    left: 8%;
     transform: rotate(-30deg);
 }
 
 .logo-2 {
     position: relative;
-    top: 18%;
-    left: 30%;
+    top: 12%;
+    left: 14%;
     /* transform: rotate(30deg); */
 }
 
 .logo-3 {
     position: relative;
-    top: -24%;
-    left: 26%;
+    top: -25%;
+    left: 22%;
     transform: rotate(30deg);
 }
 

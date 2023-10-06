@@ -17,7 +17,16 @@ const Project = () => {
             </div>
         </div>
         <div className='project-right-column'>
-            <img src={project_image} className='project-image'></img>
+            <img src={project_image} className='project-image'>
+            </img>
+            <div className="project-image-subtitle">
+              <div>
+              “Every student deserves a dynamic and engaging educational experience. Let's build it together.”
+              </div>
+              <div className='project-subtitle-name'>
+                - Jacob, Founder of StudyCrew
+              </div>
+            </div>
         </div>
     </div>
   )

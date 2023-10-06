@@ -22,8 +22,8 @@
     position: relative;
     width: 50%;
     display: flex;
-    align-items: center; /* Vertically center the image */
-    justify-content: center; /* Horizontally center the image */
+    align-items: center; 
+    justify-content: center; 
     overflow: hidden;
 }
 .project-left-column {
@@ -34,4 +34,22 @@
 .project-text {
     margin-left: 150px;
     margin-right: 50px;
+}
+
+.project-image-subtitle {
+    position: absolute;
+    bottom: 00%; /* Adjust based on where you want the subtitle */
+    left: 0%; /* Adjust based on where you want the subtitle */
+    padding: 50px 50px; /* Space around the text */
+    padding-right: 150px;
+    backdrop-filter: blur(15px); /* Apply blur effect */
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+    font-size: 20px; /* Adjust based on your needs */
+    z-index: 50;
+}
+
+.project-subtitle-name {
+    font-size: 18px;
+    color: var(--secondary-text-color);
+    margin-top: 10px;
 }
