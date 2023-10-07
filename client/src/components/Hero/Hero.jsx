@@ -18,12 +18,12 @@ import { FaChevronRight, FaChevronDown } from 'react-icons/fa';
  * @returns {React.Element} The rendered Hero component.
  */
 
+const words = ['Collaborative', 'Accessible', 'Engaging'];
 
 const Hero = () => {
 
     // Change word in header
     const [currentWord, setCurrentWord] = useState('Collaborative');
-    const words = ['Collaborative', 'Accessible', 'Engaging'];
     const [opacity, setOpacity] = useState(1);
 
     useEffect(() => {
