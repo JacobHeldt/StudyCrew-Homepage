@@ -41,7 +41,7 @@ const Hero = () => {
       }, 3500);
   
       return () => clearInterval(interval);
-  }, [words]);
+  }, []);
 
     return (
         <div className="hero-container">
