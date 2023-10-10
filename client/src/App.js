@@ -11,6 +11,7 @@ import './index.css';
 // Import components
 import Hero from './components/Hero/Hero.jsx';
 import Mission from './components/Mission/Mission.jsx';
+import Features from './components/Features/Features.jsx';
 import Project from './components/Project/Project.jsx';
 
 
@@ -20,6 +21,7 @@ function App() {
       < Hero />
       < Mission/>
       < Project className="project-margin"/>
+      < Features/>
     </Router>
   );
 }
