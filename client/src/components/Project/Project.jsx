@@ -12,6 +12,7 @@ import project_image from '../../assets/project-image.jpg';
  */
 const Project = () => {
   return (
+    
     <div className='project-main-div'>
         {/* Left column containing project description */}
         <div className='project-left-column'>
