@@ -21,7 +21,7 @@ function App() {
       < Hero />
       < Mission/>
       < Project className="project-margin"/>
-      < Features/>
+      {/* < Features/> */}
     </Router>
   );
 }
