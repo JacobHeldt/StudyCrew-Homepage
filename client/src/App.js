@@ -20,8 +20,8 @@ function App() {
     <Router>
       < Hero />
       < Mission/>
+      < Features/>
       < Project className="project-margin"/>
-      {/* < Features/> */}
     </Router>
   );
 }
