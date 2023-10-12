@@ -11,7 +11,7 @@ import './index.css';
 // Import components
 import Hero from './components/Hero/Hero.jsx';
 import Mission from './components/Mission/Mission.jsx';
-// import Features from './components/Features/Features.jsx';
+import Features from './components/Features/Features.jsx';
 import Project from './components/Project/Project.jsx';
 
 
@@ -19,9 +19,15 @@ function App() {
   return (
     <Router>
       < Hero />
-      < Mission/>
-      < Features/>
-      < Project className="project-margin"/>
+      <div className='mission-component'>
+      < Mission />
+      </div>
+      <div className='features-component'>
+      < Features />
+      </div>
+      <div className='project-component'>
+      < Project />
+      </div>
     </Router>
   );
 }

@@ -1,3 +1,16 @@
 .project-margin {
     margin-top: 40px;
 }
+
+.mission-component {
+    position: relative;
+}
+
+.features-component {
+    position: relative;
+    margin-top: 250px;
+}
+
+.project-component {
+    margin-top: 150px;
+}

@@ -10,7 +10,7 @@ function Features() {
   const [limit,setLimit]=useState(4)
   const scrollLeft=()=>{
     if (index>1){
-      setCardWidth(card.current.offsetWidth+cardWidth+10)
+      setCardWidth(card.current.offsetWidth+cardWidth+22)
       // console.log(card.current)
       index -= 1
     }
@@ -18,7 +18,7 @@ function Features() {
   }
   const scrollRight=()=>{
     if (limit >index){
-      setCardWidth(cardWidth-card.current.offsetWidth-10)
+      setCardWidth(cardWidth-card.current.offsetWidth-22)
       // console.log(card.current)
 
       index +=1
