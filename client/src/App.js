@@ -11,15 +11,15 @@ import './index.css';
 // Import components
 import Hero from './components/Hero/Hero.jsx';
 import Mission from './components/Mission/Mission.jsx';
-import Features from './components/Features/Features.jsx';
+// import Features from './components/Features/Features.jsx';
 import Project from './components/Project/Project.jsx';
 
 
 function App() {
   return (
     <Router>
-      {/* < Hero />
-      < Mission/> */}
+      < Hero />
+      < Mission/>
       < Features/>
       < Project className="project-margin"/>
     </Router>
