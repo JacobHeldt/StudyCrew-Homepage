@@ -3,65 +3,69 @@ import "./Features.css"
 import {BsArrowRightShort,BsArrowLeftShort} from "react-icons/bs"
 
 function Features() {
-  const owlCarousel = useRef()
-  const card = useRef()
-  const [cardWidth,setCardWidth]=useState(0)
-  let [index,setindex] = useState(1)
-  const [limit,setLimit]=useState(4)
-  const scrollLeft=()=>{
-    if (index>1){
-      setCardWidth(card.current.offsetWidth+cardWidth+22)
-      // console.log(card.current)
-      index -= 1
-    }
-    setindex(index)
-  }
-  const scrollRight=()=>{
-    if (limit >index){
-      setCardWidth(cardWidth-card.current.offsetWidth-22)
-      // console.log(card.current)
+  const owlCarousel = useRef();
+  const card = useRef();
+  const [cardWidth, setCardWidth] = useState(0);
+  const [index, setIndex] = useState(1);
+  const [limit, setLimit] = useState(4);
 
-      index +=1
+  const scrollLeft = () => {
+    if (index > 1) {
+      setCardWidth(prevCardWidth => card.current.offsetWidth + prevCardWidth + 22);
+      setIndex(prevIndex => prevIndex - 1);
     }
-    setindex(index)
-  }
+  };
+
+  const scrollRight = () => {
+    if (limit > index) {
+      setCardWidth(prevCardWidth => prevCardWidth - card.current.offsetWidth - 22);
+      setIndex(prevIndex => prevIndex + 1);
+    }
+  };
   const accordian =(id)=>{
-      console.log(owlCarousel.current.children,id)
-      let ele = owlCarousel.current.children
-      switch(id){
+    console.log(owlCarousel.current.children, id)
+    let ele = owlCarousel.current.children;
+    switch(id){
         case "stage-1":
-              ele[1].style.display ="grid"
-              ele[3].style.display ="none"
-              ele[5].style.display ="none"
-              break
+            ele[1].style.display ="grid";
+            ele[3].style.display ="none";
+            ele[5].style.display ="none";
+            break;
         case "stage-2":
-              ele[1].style.display ="none"
-              ele[3].style.display ="grid"
-              ele[5].style.display ="none"
-              break
+            ele[1].style.display ="none";
+            ele[3].style.display ="grid";
+            ele[5].style.display ="none";
+            break;
         case "stage-3":
-              ele[1].style.display ="none"
-              ele[3].style.display ="none"
-              ele[5].style.display ="grid"
-              break        
-      }
+            ele[1].style.display ="none";
+            ele[3].style.display ="none";
+            ele[5].style.display ="grid";
+            break;
+        default:
+            console.warn("Unexpected id:", id);
+            break;     
+    }
   }
-  const mobileAccordian=(id)=>{
-    let ele = owlCarousel.current.children
-      switch(id){
-        case "stage-1": 
-              ele[1].style.display = ele[1].style.display === "grid"?"none":"grid"
-              break
-        case "stage-2":
-              ele[3].style.display = ele[3].style.display === "grid"?"none":"grid"
-              break
-        case "stage-3":
-              ele[5].style.display = ele[5].style.display === "grid"?"none":"grid"
-              break        
-      }
-  }
-  const reSetValue =()=>{
 
+  const mobileAccordian=(id)=>{
+      let ele = owlCarousel.current.children;
+      switch(id){
+          case "stage-1": 
+              ele[1].style.display = ele[1].style.display === "grid" ? "none" : "grid";
+              break;
+          case "stage-2":
+              ele[3].style.display = ele[3].style.display === "grid" ? "none" : "grid";
+              break;
+          case "stage-3":
+              ele[5].style.display = ele[5].style.display === "grid" ? "none" : "grid";
+              break;
+          default:
+              console.warn("Unexpected id:", id);
+              break;        
+      }
+  }
+
+  const resetValue =()=>{
     if (window.innerWidth < 521){
         setLimit(6)  
     }else if(window.innerWidth < 861){
@@ -70,12 +74,13 @@ function Features() {
       setLimit(4)
     }
     setCardWidth(0)
-    setindex(1)
+    setIndex(1) 
   }
+  
   useEffect(()=>{
-    window.addEventListener("resize",reSetValue)
+    window.addEventListener("resize",resetValue)
     return()=>{
-      window.removeEventListener("resize",reSetValue)
+      window.removeEventListener("resize",resetValue)
       
     }
   },[])
