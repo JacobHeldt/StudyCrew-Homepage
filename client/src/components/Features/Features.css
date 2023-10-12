@@ -1,17 +1,72 @@
 .features{
-    position:absolute;
-    width:100vw;
-    height:70vh;
-    z-index:10;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    position:relative;
+   padding:0 20px;
+}
+.features-head{
+    text-align: center;
 }
 
+.features-head .title{
+    text-transform: capitalize;
+}
+.features-head .title span{
+    color: #3A86FF;
+}
+.features-head .des{
+    color: gray;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+}
+.container .stages .stage{
+    text-align: center;
+    margin-bottom: 40px;
+    cursor:pointer;
+    user-select:none;
+
+}
+.container .stages .stage h3{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.container .stages .stage h3 ,.stage p{
+margin: 2px ;
+}
+
+
+.active{
+    height: 100% !important;
+}
+.owl-carousel-wrapper{
+    background-color: #F2F7FF;
+    width:70%;
+    padding: 30px;
+    text-align:center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    z-index:10;
+    transition:1s ease-in;
+    overflow: hidden;
+   
+}
+
+ .owl-carousel .cards{
+    display:grid;
+    height:1;
+    grid-auto-flow:column;
+    grid-auto-columns:calc((100%/3));
+    gap: 10px;
+    transition:.5s ease-in;
+      
+}
+.none
+{
+   display:none;  
+}
 .card{
-    width: 460px;
-    height: 640px;
     background-color:white;
     border-radius:20px;
     padding:30px 0;  
@@ -21,19 +76,54 @@
     width:90%;
     height:50%;
     margin:auto;
-    
     border-radius:20px;
-    /* border:10px solid black; */
     object-fit:cover;
     
 }
 .card-title{
    margin:2% 10%;
-   font-size:3rem;
+   font-size:1.8rem;
    font-weight:bold;
 }
 .card-description{
     margin:2% 10%;
-   font-size:1.4rem;
+   font-size:.7rem;
    color:grey;
+}
+
+.arrow-icons{
+    display:flex;    
+    justify-content:center;
+    align-items:center;
+    z-index: 12;
+}
+.arrow-right , .arrow-left{
+size:300px;
+}
+
+@media screen and (max-width:860px){
+    .container {
+        justify-content: center;
+        
+    }
+    .container .stages{
+        display:none;
+    }
+    .stage{
+        display:block;
+        cursor:pointer;
+        user-select:none;
+    }
+    .owl-carousel-wrapper{
+        border-radius:20px;
+    }
+    .owl-carousel .cards{
+        grid-auto-columns:calc((100%/2));
+
+    }
+}
+@media screen and (max-width:520px){
+    .owl-carousel .cards{
+        grid-auto-columns:calc((100%));
+    }
 }

@@ -18,10 +18,10 @@ import Project from './components/Project/Project.jsx';
 function App() {
   return (
     <Router>
-      < Hero />
-      < Mission/>
-      < Project className="project-margin"/>
+      {/* < Hero />
+      < Mission/> */}
       < Features/>
+      < Project className="project-margin"/>
     </Router>
   );
 }
