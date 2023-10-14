@@ -78,12 +78,11 @@ function Features() {
   }
   
   useEffect(()=>{
-    window.addEventListener("resize",resetValue)
-    return()=>{
-      window.removeEventListener("resize",resetValue)
-      
+    window.addEventListener("resize", resetValue)
+    return () => {
+      window.removeEventListener("resize", resetValue)
     }
-  },[])
+  }, [resetValue])
 
   return (
     <div className="features">
