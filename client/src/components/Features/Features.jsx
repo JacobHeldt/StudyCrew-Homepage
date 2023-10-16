@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import "./Features.css";
 import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
 
@@ -76,7 +76,7 @@ function Features() {
   }
 
   // Function to reset values on window resize
-  const reSetValue = () => {
+  const resetValue = useCallback(() => {
     if (window.innerWidth < 521) {
       setLimit(6);
     } else if (window.innerWidth < 861) {
@@ -87,15 +87,14 @@ function Features() {
     setCardWidth(0);
     setIndex(1);
     accordian("stage-1")
-  }
-
-  // Effect to handle window resize event
-  useEffect(() => {
-    window.addEventListener("resize", reSetValue);
-    return () => {
-      window.removeEventListener("resize", reSetValue);
-    }
   }, []);
+  
+  useEffect(() => {
+    window.addEventListener("resize", resetValue);
+    return () => {
+      window.removeEventListener("resize", resetValue);
+    };
+  }, [resetValue]);
 
   return (
 
