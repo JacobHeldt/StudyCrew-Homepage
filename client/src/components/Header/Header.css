@@ -1,0 +1,53 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 56px;
+  display: inline-grid;
+  grid-template-columns: 1fr fit-content(100%) 1fr;
+  grid-template-rows: 1fr;
+}
+
+header > * {
+  margin: auto;
+}
+
+.homeLink {
+  display: inline-flex;
+  flex-direction: row;
+  border-radius: 20px;
+  background-color: white;
+  width: fit-content;
+  position: relative;
+  padding-top: 20px;
+  top: -10px;
+  box-shadow: 0 0 10px 0 #ddd;
+  align-items: center;
+}
+
+.homeLink > .logo-1 {
+  width: 25px;
+  height: 25px;
+  transform: none;
+}
+
+.homeLink > a {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #0C1B33;
+  transition: 0.25s;
+  padding: 15px 20px 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.homeLink > a:hover {
+  color: #3A86FF;
+}
+
+.homeLink > a.active {
+  color: #3A86FF;
+  border-bottom: solid 5px #3A86FF;
+}

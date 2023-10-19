@@ -9,6 +9,7 @@ import "./App.css";
 import "./index.css";
 
 // Import components
+import Header from './components/Header/Header.jsx';
 import Hero from './components/Hero/Hero.jsx';
 import Mission from './components/Mission/Mission.jsx';
 import Features from './components/Features/Features.jsx';
@@ -19,6 +20,7 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
     <Router>
+      < Header />
       < Hero />
       <div className='mission-component'>
       < Mission />
