@@ -2,11 +2,17 @@ nav {
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
-  border-radius: 20px;
-  background-color: white;
+  border-radius: 0px 0px 12px 12px;
+  
+  /* Add a semi-transparent background color */
+  background-color: rgba(255, 255, 255, 0.78); /* 80% opacity */
+  
+  /* Add the backdrop filter to blur the content behind the nav */
+  backdrop-filter: blur(12px);
+
   width: fit-content;
   position: relative;
-  padding-top: 20px;
+  padding-top: 10px;
   top: -10px;
   box-shadow: 0 0 10px 0 #ddd;
 }

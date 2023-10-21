@@ -27,6 +27,7 @@ const Button = ({ children, variant, size, onClick }) => {
   // Modify class based on the variant and size props to apply different styles
   if (variant === 'outline') className += ' button-outline';
   if (size === 'big') className += ' button-big';
+  if (size === 'small') className += ' button-small';
   if (size === 'big-outline') className += ' button-big-outline';
 
   // Render the button with the computed className and provided props
