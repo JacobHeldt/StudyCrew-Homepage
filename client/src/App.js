@@ -22,12 +22,15 @@ function App() {
   const missionRef = React.useRef(null);
   const featuresRef = React.useRef(null);
   const projectRef = React.useRef(null);
+  const teamRef = React.useRef(null);
+
   return (
     <Router>
       < Header 
         missionRef={missionRef} 
         featuresRef={featuresRef} 
         projectRef={projectRef}
+        teamRef={teamRef}
       />
 
       < Hero />
@@ -44,7 +47,7 @@ function App() {
       < Project />
       </div>
 
-      <div className='team-component'>
+      <div className='team-component' ref={teamRef}>
         <Team />
       </div>
 

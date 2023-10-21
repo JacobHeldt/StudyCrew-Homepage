@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import Button from '../Button/Button';
 
-const Header = ({ missionRef, featuresRef, projectRef }) => {
+const Header = ({ missionRef, featuresRef, projectRef, teamRef }) => {
   const [activePage, setActivePage] = useState('');
   return (<header>
     <div onClick={()=>setActivePage('')} className="homeLink">
@@ -27,6 +27,7 @@ const Header = ({ missionRef, featuresRef, projectRef }) => {
         missionRef={missionRef} 
         featuresRef={featuresRef} 
         projectRef={projectRef}
+        teamRef={teamRef}
       />
     <Link className="waitlistLink" to="/waitlist">
       <Button onClick={()=>setActivePage('')}>Join Waitlist</Button>

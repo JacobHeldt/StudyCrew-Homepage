@@ -3,7 +3,7 @@ import './Navbar.css'
 import { Link } from "react-router-dom";
 import React, { useRef } from 'react';
 
-const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef}) => {
+const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef, teamRef}) => {
 
 
   const isActive = name => activePage===name?'activeNavLink':'';
@@ -23,6 +23,9 @@ const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef}
             break;
         case 'project':
             ref = projectRef;
+            break;
+        case 'team':
+            ref = teamRef;
             break;
         default:
             return;
@@ -48,17 +51,17 @@ const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef}
       >Project
     </Link>
     <Link
+      className={isActive('team')}
+      onClick={() => {handleNavLinkClick('team'); setActivePage('team');}}
+      >Team
+    </Link>
+    <Link
       className={isActive('FAQs')}
       to="/FAQs"
       onClick={()=>setActivePage('FAQs')}
       >FAQs
     </Link>
-    <Link
-      className={isActive('about')}
-      to="/about"
-      onClick={()=>setActivePage('about')}
-      >About Us
-    </Link>
+
   </nav>);
 }
 

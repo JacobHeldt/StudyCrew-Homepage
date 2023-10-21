@@ -6,6 +6,7 @@ import avatar3 from "../../assets/avatar3.png";
 import avatar4 from "../../assets/avatar4.png";
 import avatar5 from "../../assets/avatar5.png";
 import avatar6 from "../../assets/avatar6.png";
+import Button from "../Button/Button";
 
 const Team = () => {
 	return (
@@ -59,6 +60,11 @@ const Team = () => {
 						<p className="role">UI/UX Designer</p>
 					</div>
 				</div>
+			</div>
+			
+			<div className="join-team-section">
+			<p>Interested in becoming part of our team?</p>
+			<Button className="join-team-button">Join Us</Button>
 			</div>
 		</div>
 	);
