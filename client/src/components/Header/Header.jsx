@@ -1,6 +1,5 @@
 import './Header.css';
 
-import React, { useRef } from 'react';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';

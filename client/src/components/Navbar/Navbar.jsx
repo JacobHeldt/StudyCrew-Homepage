@@ -1,7 +1,7 @@
 import './Navbar.css'
 
 import { Link } from "react-router-dom";
-import React, { useRef } from 'react';
+import React from 'react';
 
 const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef, teamRef}) => {
 
