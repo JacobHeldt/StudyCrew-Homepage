@@ -13,6 +13,7 @@ import Hero from './components/Hero/Hero.jsx';
 import Mission from './components/Mission/Mission.jsx';
 import Features from './components/Features/Features.jsx';
 import Project from './components/Project/Project.jsx';
+import Empower from './components/Empower/Empower.jsx';
 import Footer from './components/Footer/Footer';
 
 
@@ -28,6 +29,9 @@ function App() {
       </div>
       <div className='project-component'>
       < Project />
+      </div>
+      <div className="empower-component">
+          <Empower/>
       </div>
       <div className="footer-component">
 

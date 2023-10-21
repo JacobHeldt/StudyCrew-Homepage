@@ -1,0 +1,57 @@
+.empower{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.user-email{
+    text-align:center;
+    margin:0 -120px;
+}
+.user-email p{
+    padding:0 20%;
+}
+.user-email h1{
+    font-size:3rem;
+}
+.user-email h1 span{
+    color:#4C88F6;
+}
+
+.user-email .email-input{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.user-email .email-input input{
+    margin-right:-4%;
+    padding:10px 30px;
+}
+.user-email .email-input button{
+    padding:12px 30px;
+    background-color:#4C88F6;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:3px;
+}
+.user-email .email-input button,
+.user-email .email-input input{
+    border-radius:10px;
+    border:2px solid #4C88F6;
+    outline:none;
+}
+.user-email .email-input input::placeholder{
+    color:#4C88F6;
+
+}
+.left-wing,.right-wing{
+    margin-bottom:-120px;
+}
+@media screen and (max-width:740px){
+    
+    .left-wing,.right-wing{
+        display:none;
+    }
+
+}
