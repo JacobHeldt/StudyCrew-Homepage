@@ -14,6 +14,7 @@ import Hero from './components/Hero/Hero.jsx';
 import Mission from './components/Mission/Mission.jsx';
 import Features from './components/Features/Features.jsx';
 import Project from './components/Project/Project.jsx';
+import Team from './components/Team/Team.jsx';
 import Footer from './components/Footer/Footer';
 
 
@@ -28,18 +29,26 @@ function App() {
         featuresRef={featuresRef} 
         projectRef={projectRef}
       />
+
       < Hero />
+
       <div className='mission-component' ref={missionRef}>
       < Mission/>
       </div>
+
       <div className='features-component' ref={featuresRef}>
       < Features />
       </div>
+
       <div className='project-component' ref={projectRef}>
       < Project />
       </div>
-      <div className="footer-component">
 
+      <div className='team-component'>
+        <Team />
+      </div>
+
+      <div className="footer-component">
       <Footer/>
       </div>
     </Router>

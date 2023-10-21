@@ -100,7 +100,7 @@ function Features() {
 
     <div className="features">
       <div className="features-head">
-        <h1 className="title">our <span>features</span></h1>
+        <h2>Our <span>Features</span></h2>
         <p className="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo at a dolor voluptatum.</p>
       </div>
       <div className="container">

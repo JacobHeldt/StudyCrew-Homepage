@@ -49,7 +49,13 @@ h3 {
 
 h2 {
   font-weight: 500;
-  font-size: 50px;
+  font-size: 60px;
+  font-family: var(--heading-font);
+}
+
+h2 span {
+  color: var(--primary-color);
+  font-family: var(--heading-font);
 }
 
 p {
