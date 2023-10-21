@@ -1,57 +1,70 @@
-.empower{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-.user-email{
-    text-align:center;
-    margin:0 -120px;
-}
-.user-email p{
-    padding:0 20%;
-}
-.user-email h1{
-    font-size:3rem;
-}
-.user-email h1 span{
-    color:#4C88F6;
+.empower {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.user-email .email-input{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.user-email {
+    text-align: center;
+    margin: 0 -120px;
 }
-.user-email .email-input input{
-    margin-right:-4%;
-    padding:10px 30px;
+
+.user-email h2 {
+    margin-bottom: 20px;
 }
-.user-email .email-input button{
-    padding:12px 30px;
-    background-color:#4C88F6;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:3px;
+
+.user-email h1 span {
+    color: #4C88F6;
 }
+
+.user-email .email-input {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.user-email .email-input input {
+    margin-right: -4%;
+    font-size: 16px;
+    padding: 9.5px 60px 9.5px 20px; 
+    min-width: 220px;
+    background-color: white;
+}
+
 .user-email .email-input button,
-.user-email .email-input input{
-    border-radius:10px;
-    border:2px solid #4C88F6;
-    outline:none;
+.user-email .email-input input {
+    border-radius: 10px;
+    border: 1px solid #4C88F6;
+    outline: none;
 }
-.user-email .email-input input::placeholder{
-    color:#4C88F6;
 
+.user-email .email-input input::placeholder {
+    position: relative;
+    color: #6B7380;
+    opacity: 75%;
+    left: 0px;
 }
-.left-wing,.right-wing{
-    margin-bottom:-120px;
+
+.left-wing,
+.right-wing {
+    margin-bottom: -120px;
 }
-@media screen and (max-width:740px){
-    
-    .left-wing,.right-wing{
-        display:none;
+
+@media screen and (max-width: 740px) {
+    .left-wing,
+    .right-wing {
+        display: none;
     }
+}
 
+.subtitle {
+    position: relative;
+    width: 40vw;
+    left: 0; 
+    text-align: center;
+    top: -10px; 
+    margin: 0 50px;
+    color: var(--secondary-text-color)
 }

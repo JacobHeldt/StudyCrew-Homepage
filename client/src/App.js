@@ -47,6 +47,7 @@ function App() {
       <div className='project-component' ref={projectRef}>
       < Project />
       </div>
+      
       <div className="empower-component">
           <Empower/>
       </div>
