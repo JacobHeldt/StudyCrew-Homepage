@@ -46,6 +46,12 @@
     transform: translateY(-5%);
 }
 
+/* Smaller button */
+.button-small {
+    padding: 8px 18px;
+    font-size: 14px;
+}
+
 /* Make width of buttons higher on mobile */
 @media screen and (max-width: 768px) { 
     .button-big, .button-big-outline {

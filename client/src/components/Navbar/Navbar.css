@@ -1,0 +1,40 @@
+nav {
+  display: inline-grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  border-radius: 0px 0px 12px 12px;
+  
+  /* Add a semi-transparent background color */
+  background-color: rgba(255, 255, 255, 0.78); /* 80% opacity */
+  
+  /* Add the backdrop filter to blur the content behind the nav */
+  backdrop-filter: blur(12px);
+
+  width: fit-content;
+  position: relative;
+  padding-top: 10px;
+  top: -10px;
+  box-shadow: 0 0 10px 0 #ddd;
+}
+
+nav > a {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #0C1B33;
+  padding: 15px 20px 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  height: 21px !important;
+}
+
+nav > a:hover {
+  color: #3A86FF;
+}
+
+nav > a.activeNavLink {
+  color: #3A86FF;
+  margin-bottom: 0;
+  border-bottom: solid 5px #3A86FF;
+}
