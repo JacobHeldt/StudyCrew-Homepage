@@ -18,17 +18,24 @@ import Footer from './components/Footer/Footer';
 
 
 function App() {
+  const missionRef = React.useRef(null);
+  const featuresRef = React.useRef(null);
+  const projectRef = React.useRef(null);
   return (
     <Router>
-      < Header />
+      < Header 
+        missionRef={missionRef} 
+        featuresRef={featuresRef} 
+        projectRef={projectRef}
+      />
       < Hero />
-      <div className='mission-component'>
-      < Mission />
+      <div className='mission-component' ref={missionRef}>
+      < Mission/>
       </div>
-      <div className='features-component'>
+      <div className='features-component' ref={featuresRef}>
       < Features />
       </div>
-      <div className='project-component'>
+      <div className='project-component' ref={projectRef}>
       < Project />
       </div>
       <div className="footer-component">

@@ -1,11 +1,12 @@
 import './Header.css';
 
+import React, { useRef } from 'react';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import Button from '../Button/Button';
 
-const Header = () => {
+const Header = ({ missionRef, featuresRef, projectRef }) => {
   const [activePage, setActivePage] = useState('');
   return (<header>
     <div onClick={()=>setActivePage('')} className="homeLink">
@@ -20,7 +21,13 @@ const Header = () => {
       </svg>
       <Link to="/">StudyCrew</Link>
     </div>
-    <Navbar activePage={activePage} setActivePage={setActivePage}/>
+    <Navbar 
+        activePage={activePage} 
+        setActivePage={setActivePage}
+        missionRef={missionRef} 
+        featuresRef={featuresRef} 
+        projectRef={projectRef}
+      />
     <Link className="waitlistLink" to="/waitlist">
       <Button onClick={()=>setActivePage('')}>Join Waitlist</Button>
     </Link>
