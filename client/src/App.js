@@ -14,11 +14,8 @@ import Hero from './components/Hero/Hero.jsx';
 import Mission from './components/Mission/Mission.jsx';
 import Features from './components/Features/Features.jsx';
 import Project from './components/Project/Project.jsx';
-<<<<<<< HEAD
 import Empower from './components/Empower/Empower.jsx';
-=======
 import Team from './components/Team/Team.jsx';
->>>>>>> a623d87e4707c0c70bbb09d097e3504c6d57a3b2
 import Footer from './components/Footer/Footer';
 
 
@@ -50,13 +47,9 @@ function App() {
       <div className='project-component' ref={projectRef}>
       < Project />
       </div>
-<<<<<<< HEAD
       <div className="empower-component">
           <Empower/>
       </div>
-      <div className="footer-component">
-=======
->>>>>>> a623d87e4707c0c70bbb09d097e3504c6d57a3b2
 
       <div className='team-component' ref={teamRef}>
         <Team />
