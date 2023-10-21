@@ -1,6 +1,5 @@
 /* Import React and necessary components */
 import React from 'react';
-import { FaChevronRight } from 'react-icons/fa';
 import "./Empower.css";
 import Button from '../Button/Button';
 
@@ -29,7 +28,7 @@ function Empower() {
             <div className="email-input">
                 {/* User input and Join button */}
                 <input type="text" placeholder='Enter your email'/>
-                <Button>Join WaitList <FaChevronRight/></Button>
+                <Button>Join WaitList</Button>
             </div>
         </div>
         <div className="right-wing">

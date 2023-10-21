@@ -1,3 +1,4 @@
+/* Styling for the header */
 header {
   position: sticky;
   top: 0;
@@ -9,10 +10,12 @@ header {
   grid-template-rows: 1fr;
 }
 
+/* Centering content inside the header */
 header > * {
   margin: auto;
 }
 
+/* Styling for header items, e.g. logo and application name */
 .header-items {
   display: inline-flex;
   flex-direction: row;
@@ -24,19 +27,18 @@ header > * {
   box-shadow: 0 0 10px 0 #ddd;
   align-items: center;
   max-height: 50px;
-  /* Add a semi-transparent background color */
-  background-color: rgba(255, 255, 255, 0.78); /* 80% opacity */
-
-  /* Add the backdrop filter to blur the content behind the nav */
-  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.78); /* Semi-transparent background */
+  backdrop-filter: blur(12px); /* Blur effect for the content behind the nav */
 }
 
+/* Styling for the logo inside header items */
 .header-items > .logo-1 {
   width: 25px;
   height: 25px;
   transform: none;
 }
 
+/* Styling for links inside header items */
 .header-items > a {
   font-size: 16px;
   font-weight: 600;
@@ -48,10 +50,12 @@ header > * {
   margin-bottom: 5px;
 }
 
+/* Hover effect for the links */
 .header-items > a:hover {
   color: #3A86FF;
 }
 
+/* Active link styling */
 .header-items > a.active {
   color: #3A86FF;
   border-bottom: solid 5px #3A86FF;

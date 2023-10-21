@@ -1,22 +1,27 @@
+/* Flex container to center child elements */
 .empower {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Email sign-up container styles */
 .user-email {
     text-align: center;
-    margin: 0 -120px;
+    margin: 0 -120px;  /* Negative margin for design aesthetics */
 }
 
+/* Additional margin for the heading */
 .user-email h2 {
     margin-bottom: 20px;
 }
 
+/* Highlight color for specific parts of the heading */
 .user-email h1 span {
     color: #4C88F6;
 }
 
+/* Styling for the email input and button container */
 .user-email .email-input {
     position: relative;
     display: flex;
@@ -25,14 +30,16 @@
     margin-top: 15px;
 }
 
+/* Styling for the email input field */
 .user-email .email-input input {
     margin-right: -4%;
     font-size: 16px;
-    padding: 9.5px 60px 9.5px 20px; 
+    padding: 9px 60px 9px 20px; 
     min-width: 220px;
     background-color: white;
 }
 
+/* Common styling for the email input and submit button */
 .user-email .email-input button,
 .user-email .email-input input {
     border-radius: 10px;
@@ -40,6 +47,7 @@
     outline: none;
 }
 
+/* Styling for the email input placeholder */
 .user-email .email-input input::placeholder {
     position: relative;
     color: #6B7380;
@@ -47,11 +55,13 @@
     left: 0px;
 }
 
+/* Negative margin for wings to achieve a specific design aesthetic */
 .left-wing,
 .right-wing {
     margin-bottom: -120px;
 }
 
+/* Media query to hide wings on small screens */
 @media screen and (max-width: 740px) {
     .left-wing,
     .right-wing {
@@ -59,6 +69,7 @@
     }
 }
 
+/* Styling for section subtitle */
 .subtitle {
     position: relative;
     width: 40vw;
@@ -66,5 +77,5 @@
     text-align: center;
     top: -10px; 
     margin: 0 50px;
-    color: var(--secondary-text-color)
+    color: var(--secondary-text-color); 
 }

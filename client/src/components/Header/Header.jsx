@@ -1,14 +1,20 @@
+// Importing necessary CSS and components
 import './Header.css';
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import Button from '../Button/Button';
 
+
+// Header component receives multiple references as props
 const Header = ({ missionRef, featuresRef, projectRef, teamRef }) => {
+  // State for keeping track of the active page
   const [activePage, setActivePage] = useState('');
-  return (<header>
-    <div onClick={()=>setActivePage('')} className="header-items">
+
+  return (
+  <header>
+    {/* Logo and application name section */}
+    <div onClick={() => setActivePage('')} className="header-items">
       <svg width="200" height="200" viewBox="0 0 446 445" fill="none" xmlns="http://www.w3.org/2000/svg" className='logo-1' preserveAspectRatio="xMidYMid meet">
         <circle cx="384.372" cy="61.4726" r="41.8014" fill="#3A86FF" fill-opacity="0.9"/>
         <circle cx="42.092" cy="169.665" r="41.8014" fill="#3A86FF" fill-opacity="0.9"/>
@@ -20,6 +26,8 @@ const Header = ({ missionRef, featuresRef, projectRef, teamRef }) => {
       </svg>
       <Link to="/">StudyCrew</Link>
     </div>
+    
+    {/* Navbar with active page state and section references */}
     <Navbar 
         activePage={activePage} 
         setActivePage={setActivePage}
@@ -29,12 +37,14 @@ const Header = ({ missionRef, featuresRef, projectRef, teamRef }) => {
         teamRef={teamRef}
       />
 
+      {/* Waitlist button */}
       <div className='header-items'> 
-      <Link className="waitlistLink" to="/waitlist">
-        <Button onClick={()=>setActivePage('')} size='small'>Join Waitlist</Button>
-      </Link>
+        <Link className="waitlistLink" to="/waitlist">
+          <Button onClick={() => setActivePage('')} size='small'>Join Waitlist</Button>
+        </Link>
       </div>
-  </header>);
+    </header>
+    );
 };
 
 export default Header;

@@ -1,9 +1,3 @@
-/* Root Variables: Define base colors for the theme */
-:root {
-    --stop-color-1: #becbe1;
-    --stop-color-2: #3833A6;
-}
-
 /* Chevron Styles */
 .chevron {
     width: 100%;
@@ -87,8 +81,9 @@
 /* Mission description text style */
 .mission-text {
     position: relative;
-    top: 15vh;
+    top: 180px;
     margin-right: 5%;
+    color: #FFF;
 }
 
 /* Right column of the main content */

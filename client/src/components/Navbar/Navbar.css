@@ -1,22 +1,21 @@
+/* Main Navbar Styling */
+
+/* Styling for the navbar container */
 nav {
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
   border-radius: 0px 0px 12px 12px;
-  
-  /* Add a semi-transparent background color */
-  background-color: rgba(255, 255, 255, 0.78); /* 80% opacity */
-  
-  /* Add the backdrop filter to blur the content behind the nav */
-  backdrop-filter: blur(12px);
-
+  background-color: rgba(255, 255, 255, 0.78); /* Semi-transparent background */
+  backdrop-filter: blur(12px); /* Blurs the content behind the navbar */
   width: fit-content;
   position: relative;
   padding-top: 10px;
   top: -10px;
-  box-shadow: 0 0 10px 0 #ddd;
+  box-shadow: 0 0 10px 0 #ddd; /* Light shadow for the navbar */
 }
 
+/* General styling for the navigation links */
 nav > a {
   font-size: 16px;
   font-weight: 600;
@@ -26,15 +25,16 @@ nav > a {
   border-radius: 5px;
   margin-bottom: 5px;
   text-align: center;
-  height: 21px !important;
 }
 
+/* Styling for hovering over a navigation link */
 nav > a:hover {
   color: #3A86FF;
 }
 
+/* Styling for the active navigation link */
 nav > a.activeNavLink {
   color: #3A86FF;
   margin-bottom: 0;
-  border-bottom: solid 5px #3A86FF;
+  border-bottom: solid 5px #3A86FF; /* Highlight bottom border for the active link */
 }
