@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 
 
 // Header component receives multiple references as props
-const Header = ({ missionRef, featuresRef, projectRef, teamRef }) => {
+const Header = ({ missionRef, featuresRef, projectRef, teamRef, signupRef }) => {
   // State for keeping track of the active page
   const [activePage, setActivePage] = useState('');
 
@@ -35,6 +35,7 @@ const Header = ({ missionRef, featuresRef, projectRef, teamRef }) => {
         featuresRef={featuresRef} 
         projectRef={projectRef}
         teamRef={teamRef}
+        signupRef={signupRef}
       />
 
       {/* Waitlist button */}

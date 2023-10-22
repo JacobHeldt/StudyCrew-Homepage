@@ -2,7 +2,7 @@ import './Navbar.css'
 import { Link } from "react-router-dom";
 import React from 'react';
 
-const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef, teamRef}) => {
+const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef, teamRef, signupRef}) => {
   
   // Helper function to determine if a link is active
   const isActive = name => activePage === name ? 'activeNavLink' : '';
@@ -28,6 +28,9 @@ const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef,
         case 'team':
             ref = teamRef;
             break;
+        case 'signup':
+            ref = signupRef;
+            break;
         default:
             return;
     }
@@ -41,10 +44,8 @@ const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef,
       <Link className={isActive('mission')} onClick={() => {handleNavLinkClick('mission'); setActivePage('mission');}}>Mission</Link>
       <Link className={isActive('features')} onClick={() => {handleNavLinkClick('features'); setActivePage('features');}}>Features</Link>
       <Link className={isActive('project')} onClick={() => {handleNavLinkClick('project'); setActivePage('project');}}>Project</Link>
+      <Link className={isActive('signup')} onClick={()=> {handleNavLinkClick('signup'); setActivePage('signup');}}>Sign Up</Link>
       <Link className={isActive('team')} onClick={() => {handleNavLinkClick('team'); setActivePage('team');}}>Team</Link>
-
-      {/* Direct link to the FAQs page */}
-      <Link className={isActive('FAQs')} to="/FAQs" onClick={()=>setActivePage('FAQs')}>FAQs</Link>
     </nav>
   );
 }

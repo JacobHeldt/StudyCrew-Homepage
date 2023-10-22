@@ -14,7 +14,7 @@ import Hero from './components/Hero/Hero.jsx';
 import Mission from './components/Mission/Mission.jsx';
 import Features from './components/Features/Features.jsx';
 import Project from './components/Project/Project.jsx';
-import Empower from './components/Empower/Empower.jsx';
+import SignUp from './components/SignUp/Signup.jsx';
 import Team from './components/Team/Team.jsx';
 import Footer from './components/Footer/Footer';
 
@@ -24,6 +24,7 @@ function App() {
   const featuresRef = React.useRef(null);
   const projectRef = React.useRef(null);
   const teamRef = React.useRef(null);
+  const signupRef = React.useRef(null);
 
   return (
     <Router>
@@ -32,6 +33,8 @@ function App() {
         featuresRef={featuresRef} 
         projectRef={projectRef}
         teamRef={teamRef}
+        signupRef={signupRef}
+
       />
 
       < Hero />
@@ -48,8 +51,8 @@ function App() {
       < Project />
       </div>
       
-      <div className="empower-component">
-          <Empower/>
+      <div className="empower-component" ref={signupRef}>
+          <SignUp/>
       </div>
 
       <div className='team-component' ref={teamRef}>

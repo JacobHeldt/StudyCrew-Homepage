@@ -1,10 +1,10 @@
 /* Import React and necessary components */
 import React from 'react';
-import "./Empower.css";
+import "./Signup.css";
 import Button from '../Button/Button';
 
 /* Define the Empower component */
-function Empower() {
+function SignUp() {
   return (
     <div className='empower'>
         <div className="left-wing">
@@ -48,4 +48,4 @@ function Empower() {
   );
 }
 
-export default Empower;
+export default SignUp;
