@@ -5,7 +5,7 @@ nav {
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
-  border-radius: 0px 0px 12px 12px;
+  border-radius: 0px 0px 5px 5px;
   background-color: rgba(255, 255, 255, 0.78); /* Semi-transparent background */
   backdrop-filter: blur(12px); /* Blurs the content behind the navbar */
   width: fit-content;
@@ -25,6 +25,8 @@ nav > a {
   border-radius: 5px;
   margin-bottom: 5px;
   text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 /* Styling for hovering over a navigation link */

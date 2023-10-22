@@ -19,7 +19,7 @@ header > * {
 .header-items {
   display: inline-flex;
   flex-direction: row;
-  border-radius: 0px 0px 12px 12px;
+  border-radius: 0px 0px 5px 5px;
   width: fit-content;
   position: relative;
   padding-top: 15px;
@@ -57,6 +57,7 @@ header > * {
 
 /* Active link styling */
 .header-items > a.active {
-  color: #3A86FF;
-  border-bottom: solid 5px #3A86FF;
+  /* color: #3A86FF; */
+  /* border-bottom: solid 5px #3A86FF; */
+  border-radius: 5px;
 }
