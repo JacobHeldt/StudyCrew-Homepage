@@ -1,15 +1,12 @@
 // Importing necessary CSS and components
 import './Header.css';
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import Button from '../Button/Button';
 
 
 // Header component receives multiple references as props
-const Header = ({ missionRef, featuresRef, projectRef, teamRef, signupRef }) => {
-  // State for keeping track of the active page
-  const [activePage, setActivePage] = useState('');
+const Header = ({ missionRef, featuresRef, projectRef, teamRef, signupRef, activePage, setActivePage }) => {
 
   return (
   <header>
