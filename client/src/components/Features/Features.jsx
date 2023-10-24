@@ -115,7 +115,7 @@ function Features() {
       <div className="container">
         <div className="stages">
           {stages.map(stage => (
-            <div key={stage.id} className="stage" onClick={() => accordian(stage.id)}>
+            <div key={stage.id} className={`stage ${stage.id === currentStage ? "active-stage" : ""}`} onClick={() => accordian(stage.id)}>
               <h3>{stage.title}</h3>
               <p>{stage.description}</p>
             </div>
@@ -125,7 +125,7 @@ function Features() {
         <div className="owl-carousel-wrapper" ref={owlCarousel}>
           {stages.map(stage => (
             <React.Fragment key={stage.id}>
-              <div className="none stage" onClick={() => mobileAccordian(stage.id)}>
+              <div key={stage.id} className={`stage none`} onClick={() => accordian(stage.id)}>
                 <h1>{stage.title}</h1>
               </div>
 

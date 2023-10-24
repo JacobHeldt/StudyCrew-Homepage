@@ -23,7 +23,7 @@ const stages = [
     {
       id: 'stage-1',
       title: 'Stage 1',
-      description: 'Lorem ipsum dolor',
+      description: 'Foundational Phase',
       cards: [
         {
           image: study_groups,
@@ -66,7 +66,7 @@ const stages = [
     {
       id: 'stage-2',
       title: 'Stage 2',
-      description: 'Lorem ipsum dolor',
+      description: 'Expansion Phase',
       cards: [
         {
           image: mobile_application,
@@ -109,7 +109,7 @@ const stages = [
     {
         id: 'stage-3',
         title: 'Stage 3',
-        description: 'Lorem ipsum dolor',
+        description: 'Futuristic Learning',
         cards: [
           {
             image: learning_environments,
