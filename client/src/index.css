@@ -94,3 +94,12 @@ p {
   color: var(--secondary-text-color);
 }
 
+/* Neon Mist */
+.blue-neon-mist {
+  background: linear-gradient(90deg, #bcd5ff 0%, #bcd5ff 100%);
+  filter: blur(300px);
+    -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}

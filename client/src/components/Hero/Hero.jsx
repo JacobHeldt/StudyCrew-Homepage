@@ -44,6 +44,8 @@ const Hero = () => {
   }, []);
 
     return (
+      <div className="hero">
+      <div className="blue-neon-mist hero-mist-1"></div>
         <div className="hero-container">
           {/* Title with decorative SVG elements */}
           <h1 className="title title-sm">
@@ -74,6 +76,7 @@ const Hero = () => {
             </Link>
           </div>
         </div>
+      </div>
     );
 }
 
