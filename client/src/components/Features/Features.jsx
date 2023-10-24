@@ -1,29 +1,33 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import "./Features.css";
 import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
+import stages from '../../data/featureData';
 
 function Features() {
   const owlCarousel = useRef();
-  const card = useRef();
+  const cardsContainer = useRef();
   const [cardWidth, setCardWidth] = useState(0);
   const [index, setIndex] = useState(1);
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimit] = useState(6);
 
   // Function to scroll left
   const scrollLeft = () => {
+    const cardWidth = cardsContainer.current.firstChild.offsetWidth;
     if (index > 1) {
-      setCardWidth(prevCardWidth => card.current.offsetWidth + prevCardWidth + 22);
-      setIndex(prevIndex => prevIndex - 1);
+        setCardWidth(prevCardWidth => prevCardWidth + cardWidth + 324); 
+        setIndex(prevIndex => prevIndex - 1);
     }
   };
 
   // Function to scroll right
   const scrollRight = () => {
+    const cardWidth = cardsContainer.current.firstChild.offsetWidth;
     if (limit > index) {
-      setCardWidth(prevCardWidth => prevCardWidth - card.current.offsetWidth - 22);
-      setIndex(prevIndex => prevIndex + 1);
+        setCardWidth(prevCardWidth => prevCardWidth - cardWidth - 324); 
+        setIndex(prevIndex => prevIndex + 1);
     }
   };
+
 
   // Function to handle click on stage for larger screens
   const accordian = (id) => {
@@ -52,7 +56,6 @@ function Features() {
         break;
     }
   }
-
   // Function to handle click on stage for smaller screens (mobile)
   const mobileAccordian = (id) => {
     let ele = owlCarousel.current.children;
@@ -74,6 +77,10 @@ function Features() {
         break;
     }
   }
+
+  useEffect(() => {
+    accordian("stage-1"); 
+  }, []);
 
   // Function to reset values on window resize
   const resetValue = useCallback(() => {
@@ -106,81 +113,32 @@ function Features() {
       <div className="container">
         {/* Stages for larger screens */}
         <div className="stages">
-          {/* Stage 1 */}
-          <div className="stage" onClick={() => accordian("stage-1")}>
-            <h3>Stage 1</h3>
-            <p>Lorem ipsum dolor</p>
-          </div>
-
-          {/* Stage 2 */}
-          <div className="stage" onClick={() => accordian("stage-2")} >
-            <h3>Stage 1</h3>
-            <p>Lorem ipsum dolor</p>
-          </div>
-
-          {/* Stage 3 */}
-          <div className="stage" onClick={() => accordian("stage-3")} >
-            <h3>Stage 1</h3>
-            <p>Lorem ipsum dolor</p>
-          </div>
+          {stages.map(stage => (
+            <div key={stage.id} className="stage" onClick={() => accordian(stage.id)}>
+              <h3>{stage.title}</h3>
+              <p>{stage.description}</p>
+            </div>
+          ))}
         </div>
 
         {/* Owl carousel wrapper */}
         <div className="owl-carousel-wrapper" ref={owlCarousel}>
-          {/* Stage 1 content for mobile */}
-          <div className="none stage" onClick={() => mobileAccordian("stage-1")}>
-            <h1>Stage 1</h1>
-          </div>
+          {stages.map(stage => (
+            <React.Fragment key={stage.id}>
+              <div className="none stage" onClick={() => mobileAccordian(stage.id)}>
+                <h1>{stage.title}</h1>
+              </div>
 
-          {/* Owl carousel */}
-          <div className="owl-carousel">
-            {/* Cards */}
-            <div class="cards" style={{ translate: `${cardWidth}px` }} >
-              {/* Individual card */}
-              <div className="card" ref={card}>
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
+              <div className="owl-carousel">
+                <div className="cards" style={{ transform: `translateX(${cardWidth}px` }} ref={cardsContainer}>
+                  {stage.cards.map(card => (
+                    <div key={card.title} className="card">
+                      <img className="card-image" src={card.image} alt={card.title} />
+                      <h3 className="card-title">{card.title}</h3>
+                      <p className="card-description">{card.description}</p>
+                    </div>
+                  ))}
               </div>
-              {/* ... (additional cards) */}
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-             </div>
               {/* Arrow icons for carousel */}
               <div className="arrow-icons">
                 <BsArrowLeftShort onClick={scrollLeft} size={50} className="arrow-left" />
@@ -189,128 +147,9 @@ function Features() {
             </div>
           </div>
 
-          {/* Stage 2 content for mobile */}
-          <div className="none stage" onClick={() => mobileAccordian("stage-2")}>
-            <h1>Stage 2</h1>
-          </div>
+          </React.Fragment>
 
-          {/* Owl carousel */}
-          <div className="owl-carousel none">
-            {/* Cards */}
-            <div class="cards" style={{ translate: `${cardWidth}px` }} >
-              {/* Individual card */}
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              {/* ... (additional cards) */}
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              </div>
-              {/* Arrow icons for carousel */}
-              <div className="arrow-icons">
-                <BsArrowLeftShort onClick={scrollLeft} size={50} className="arrow-left" />
-                <BsArrowRightShort size={50} onClick={scrollRight} className="arrow-right" />
-              
-            </div>
-          </div>
-           {/* Stage 3 content for mobile */}
-           <div className="none stage" onClick={() => mobileAccordian("stage-3")}>
-            <h1>Stage 2</h1>
-          </div>
-
-          {/* Owl carousel */}
-          <div className="owl-carousel none">
-            {/* Cards */}
-            <div class="cards" style={{ translate: `${cardWidth}px` }} >
-              {/* Individual card */}
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              {/* ... (additional cards) */}
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              <div className="card" >
-                <img className="card-image" src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="" />
-                <h3 className="card-title">Study Group</h3>
-                <p className="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis fuga nulla quasi odit nemo quia alias aliquam voluptate? Totam magni omnis facere praesentium mollitia expedita officiis aspernatur, in illum.
-                </p>
-              </div>
-              </div>
-              {/* Arrow icons for carousel */}
-              <div className="arrow-icons">
-                <BsArrowLeftShort onClick={scrollLeft} size={50} className="arrow-left" />
-                <BsArrowRightShort size={50} onClick={scrollRight} className="arrow-right" />
-           
-            </div>
-          </div>
+          ))}
 
         </div>
       </div>

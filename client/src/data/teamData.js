@@ -32,7 +32,7 @@ const teamMembers = [
     name: "Nicholas",
     role: "Marketing",
     avatar: nicholas
-  }
+  },
   // ... other team members
 ];
 
