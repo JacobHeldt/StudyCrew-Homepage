@@ -70,31 +70,6 @@ function Features() {
     }
   }
 
-  // Handle clicks on stages for mobile screens
-  const mobileAccordian = (id) => {
-    let ele = owlCarousel.current.children;
-    switch (id) {
-      case "stage-1":
-        ele[1].style.display = ele[1].style.display === "grid" ? "none" : "grid";
-        break;
-      case "stage-2":
-        ele[3].style.display = ele[3].style.display === "grid" ? "none" : "grid";
-        break;
-      case "stage-3":
-        ele[5].style.display = ele[5].style.display === "grid" ? "none" : "grid";
-        break;
-      default:
-        console.warn("Unexpected id:", id);
-        break;
-    }
-  }
-
-  // On component mount
-  useEffect(() => {
-    resetValue();
-    accordian("stage-1"); 
-  }, []);
-
   // Reset carousel values on window resize
   const resetValue = useCallback(() => {
     if (currentStage === 'stage-3') {
@@ -105,6 +80,12 @@ function Features() {
     setCardWidth(0);
     setIndex(1);
   }, [currentStage]);
+
+  // On component mount
+  useEffect(() => {
+    resetValue();
+    accordian("stage-1"); 
+  }, [resetValue]);  
 
   return (
     <div className="features">

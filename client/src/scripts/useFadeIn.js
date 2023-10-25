@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { animateScroll as scroll } from 'react-scroll';
 
 const withScrollFadeIn = (WrappedComponent) => {
     return (props) => {
