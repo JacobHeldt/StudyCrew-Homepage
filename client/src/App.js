@@ -16,6 +16,14 @@ import SignUp from './components/SignUp/Signup.jsx';
 import Team from './components/Team/Team.jsx';
 import Footer from './components/Footer/Footer.jsx';
 
+import withScrollFadeIn from './scripts/useFadeIn';  
+const FadingHero = withScrollFadeIn(Hero);
+const FadingMission = withScrollFadeIn(Mission);
+const FadingFeatures = withScrollFadeIn(Features);
+const FadingProject = withScrollFadeIn(Project);
+const FadingSignUp = withScrollFadeIn(SignUp);
+const FadingTeam = withScrollFadeIn(Team);
+
 function App() {
   // State for the active page section
   const [activePage, setActivePage] = useState('');
@@ -104,26 +112,26 @@ function App() {
       />
 
       {/* Various site sections */}
-      <Hero />
+      <FadingHero id="hero" delay={100} />
 
       <div className='mission-component' ref={missionRef}>
-        <Mission />
+        <FadingMission id="mission" />
       </div>
 
       <div className='features-component' ref={featuresRef}>
-        <Features />
+        <FadingFeatures id="features" />
       </div>
 
       <div className='project-component' ref={projectRef}>
-        <Project />
+        <FadingProject id="project" />
       </div>
 
       <div className="empower-component" ref={signupRef}>
-        <SignUp />
+        <FadingSignUp id="sign-up" />
       </div>
 
       <div className='team-component' ref={teamRef}>
-        <Team />
+        <FadingTeam id="team" />
       </div>
 
       {/* Footer */}
