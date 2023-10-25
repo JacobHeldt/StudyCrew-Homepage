@@ -5,7 +5,7 @@ import jona from "../assets/avatars/jona.svg";
 import sugumaran from "../assets/avatars/sugumaran.svg";
 import xavier from "../assets/avatars/xavier.svg";
 import nicholas from "../assets/avatars/nicholas.svg";
-// ... import other avatars
+import kian from "../assets/avatars/kian.svg";
 
 const teamMembers = [
   {
@@ -33,7 +33,11 @@ const teamMembers = [
     role: "Marketing",
     avatar: nicholas
   },
-  // ... other team members
+  {
+    name: "Kian",
+    role: "UI/UX Design",
+    avatar: kian
+  },
 ];
 
 export default teamMembers;
