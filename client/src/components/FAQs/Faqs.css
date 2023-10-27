@@ -22,18 +22,21 @@
     border-bottom:0.5px black dashed;
     
 }
-.question-head{
+.question-head {
     font-size: 1.2rem;
     font-weight: bold;
 }
+.question-head:hover {
+    cursor: pointer;
+}
 .question-des{
-    position: relative;
-    padding: 10px 0px;
-    left: -10%;
+    padding: 5px 25px;
+    text-align: left;
+    list-style: none;
 }
 
 summary {
-    padding: 4px 20px;
+    padding: 4px 25px;
 }
 
 .question-head {

@@ -21,7 +21,7 @@ h2 {
 	padding: 0;
 }
 
-p {
+.team-component p {
 	max-width: 800px;
 	margin: auto;
 	opacity: 0.7;
