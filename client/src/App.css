@@ -28,3 +28,9 @@
     position: relative;
     top: 50px;
 }
+
+.faq-component {
+    position: relative;
+    top: -40px;
+    margin-bottom: 100px;
+}

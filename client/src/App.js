@@ -15,6 +15,7 @@ import Project from './components/Project/Project.jsx';
 import SignUp from './components/SignUp/Signup.jsx';
 import Team from './components/Team/Team.jsx';
 import Footer from './components/Footer/Footer.jsx';
+import Faqs from './components/FAQs/Faqs.jsx';
 
 import withScrollFadeIn from './scripts/useFadeIn';  
 const FadingHero = withScrollFadeIn(Hero);
@@ -23,6 +24,7 @@ const FadingFeatures = withScrollFadeIn(Features);
 const FadingProject = withScrollFadeIn(Project);
 const FadingSignUp = withScrollFadeIn(SignUp);
 const FadingTeam = withScrollFadeIn(Team);
+const FadingFAQ = withScrollFadeIn(Faqs);
 
 function App() {
   // State for the active page section
@@ -34,6 +36,7 @@ function App() {
   const projectRef = React.useRef(null);
   const teamRef = React.useRef(null);
   const signupRef = React.useRef(null);
+  const faqRef = React.useRef(null);
 
   useEffect(() => {
     // Cached ref nodes
@@ -42,6 +45,7 @@ function App() {
     const projectNode = projectRef.current;
     const teamNode = teamRef.current;
     const signupNode = signupRef.current;
+    const faqNode = faqRef.current;
 
     // Callback to handle what happens when the elements intersect
     const callback = (entries) => {
@@ -63,6 +67,9 @@ function App() {
               break;
             case 'team-component':
               setActivePage('team');
+              break;
+            case 'faq-component':
+              setActivePage('faq');
               break;
             default:
               break;
@@ -86,6 +93,7 @@ function App() {
     if (projectNode) observer.observe(projectNode);
     if (teamNode) observer.observe(teamNode);
     if (signupNode) observer.observe(signupNode);
+    if (faqNode) observer.observe(faqNode);
 
     // Cleanup function to unobserve the refs
     return () => {
@@ -94,6 +102,7 @@ function App() {
       if (projectNode) observer.unobserve(projectNode);
       if (teamNode) observer.unobserve(teamNode);
       if (signupNode) observer.unobserve(signupNode);
+      if (faqNode) observer.unobserve(faqNode);
     };
   }, []);
 
@@ -107,6 +116,7 @@ function App() {
         projectRef={projectRef}
         teamRef={teamRef}
         signupRef={signupRef}
+        faqRef={faqRef}
         activePage={activePage}
         setActivePage={setActivePage}
       />
@@ -132,6 +142,10 @@ function App() {
 
       <div className='team-component' ref={teamRef}>
         <FadingTeam id="team" />
+      </div>
+
+      <div className="faq-component" ref={faqRef}>
+        <FadingFAQ id="faq" />
       </div>
 
       {/* Footer */}

@@ -3,7 +3,7 @@
 /* Styling for the navbar container */
 nav {
   display: inline-grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr;
   border-radius: 0px 0px 5px 5px;
   background-color: rgba(255, 255, 255, 0.78); /* Semi-transparent background */

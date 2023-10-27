@@ -46,6 +46,7 @@ const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef,
       <Link className={isActive('project')} onClick={() => {handleNavLinkClick('project'); setActivePage('project');}}>Project</Link>
       <Link className={isActive('signup')} onClick={()=> {handleNavLinkClick('signup'); setActivePage('signup');}}>Sign Up</Link>
       <Link className={isActive('team')} onClick={() => {handleNavLinkClick('team'); setActivePage('team');}}>Team</Link>
+      <Link className={isActive('faq')} onClick={() => {handleNavLinkClick('faq'); setActivePage('faq');}}>FAQs</Link>
     </nav>
   );
 }
