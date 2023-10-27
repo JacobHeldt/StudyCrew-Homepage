@@ -21,6 +21,8 @@ function SignUp() {
             </svg>           
         </div>
 
+      <div className="blue-neon-mist signup-mist-1"></div>
+
         <div className="user-email">
             {/* Heading */}
             <h2>Empowering <span>You</span></h2>

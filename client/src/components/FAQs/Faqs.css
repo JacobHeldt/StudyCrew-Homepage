@@ -27,7 +27,9 @@
     font-weight: bold;
 }
 .question-des{
+    position: relative;
     padding: 10px 0px;
+    left: -10%;
 }
 
 summary {
