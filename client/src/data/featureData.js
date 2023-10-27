@@ -103,7 +103,6 @@ const stages = [
           title: 'Multilingual Support',
           description: "Unlock global learning possibilities with multilingual support. No matter the language you speak, we want to ensure that your educational journey is seamless and inclusive.",
         },
-        // ... more cards for stage 2
       ],
     },
     {

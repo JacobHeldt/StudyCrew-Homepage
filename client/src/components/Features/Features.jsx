@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React, { useRef, useState, useEffect } from 'react'; // Removed useCallback
 import "./Features.css";
 import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
 import stages from '../../data/featureData';
@@ -8,7 +8,7 @@ function Features() {
   const cardsContainer = useRef();
   const [cardWidth, setCardWidth] = useState(0);
   const [index, setIndex] = useState(1);
-  const [limit, setLimit] = useState(6);
+  const [limit] = useState(6);
   const [currentStage, setCurrentStage] = useState('stage-1');
 
   // Function to handle scrolling left in the carousel
@@ -70,22 +70,10 @@ function Features() {
     }
   }
 
-  // Reset carousel values on window resize
-  const resetValue = useCallback(() => {
-    if (currentStage === 'stage-3') {
-      setLimit(3);
-    } else {
-      setLimit(6);
-    }
-    setCardWidth(0);
-    setIndex(1);
-  }, [currentStage]);
-
   // On component mount
   useEffect(() => {
-    resetValue();
     accordian("stage-1"); 
-  }, [resetValue]);  
+  }, []);
 
   return (
     <div className="features">
