@@ -1,0 +1,31 @@
+.faqs-head,.faqs-des{
+    text-align: center;
+}
+.faqs-head span{
+    text-transform: uppercase;
+    color: #3A86FF;
+}
+.questions-list{
+    /* margin-left: auto; */
+    padding: 0 7%;
+    margin-top: 15px;
+}
+.question{
+    background-color: #EEF4FF;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0 2px 1px gray;
+    margin-bottom: 15px;
+}
+.question[open] .question-head{
+    padding-bottom: 5px;
+    border-bottom:2px black dashed;
+    
+}
+.question-head{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.question-des{
+    padding: 10px;
+}
