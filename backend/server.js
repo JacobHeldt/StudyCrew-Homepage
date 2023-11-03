@@ -17,6 +17,10 @@ app.use(compression());
 // Middleware
 app.use(bodyParser.json());
 
+app.use(cors({
+    origin: 'https://studycrew-homepage-preview.netlify.app'
+}));
+
 // Cors Configuration for Production
 const whitelist = ['https://studycrew-homepage-preview.netlify.app/', 'studycrew.world']; // replace with your frontend domain
 const corsOptions = {
