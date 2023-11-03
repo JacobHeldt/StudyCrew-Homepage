@@ -22,7 +22,7 @@ app.use(cors({
 }));
 
 // Cors Configuration for Production
-const whitelist = ['https://studycrew-homepage-preview.netlify.app/', 'studycrew.world']; // replace with your frontend domain
+const whitelist = ['https://studycrew-homepage-preview.netlify.app']; // replace with your frontend domain
 const corsOptions = {
   origin: (origin, callback) => {
     if (!origin || whitelist.indexOf(origin) !== -1) {
