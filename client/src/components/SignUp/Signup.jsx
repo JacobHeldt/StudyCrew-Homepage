@@ -13,7 +13,7 @@ function SignUp() {
   const handleJoinWaitlist = async () => {
     try {
       // Perform input validation if needed
-      const response = await axios.post('http://localhost:2023/join-waitlist', { email });
+      const response = await axios.post('https://studycrew-homepage-backend.onrender.com/join-waitlist', { email });
       setMessage(response.data.message);
       setEmail(''); // Clear the input after successful operation
     } catch (error) {
