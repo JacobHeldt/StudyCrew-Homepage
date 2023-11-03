@@ -57,20 +57,19 @@ const Waitlist = mongoose.model('Waitlist', WaitlistSchema);
 
 // POST endpoint to add email to waitlist
 app.post('/join-waitlist', async (req, res) => {
-  try {
-    const { email } = req.body;
+    try {
+      const { email } = req.body;
 
-    // TODO: Validate email
+      // TODO: Add email verification
 
-    // Create a new waitlist entry
-    const newEntry = new Waitlist({ email });
-    await newEntry.save();
-
-    res.status(201).json({ message: 'Email added to waitlist!' });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+      const newEntry = new Waitlist({ email });
+      await newEntry.save();
+      res.status(201).json({ message: 'Email added to waitlist!' });
+    } catch (error) {
+      console.error(error); // Log the full error
+      res.status(500).json({ message: error.message, stack: error.stack });
+    }
+  });
 
 // Start the server
 const port = process.env.PORT || 2023;
