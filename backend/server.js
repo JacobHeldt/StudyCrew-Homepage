@@ -73,4 +73,4 @@ app.post('/join-waitlist', async (req, res) => {
 
 // Start the server
 const port = process.env.PORT || 2023;
-app.listen(port, () => console.log(`Server started on port ${port}`));
+app.listen(port, () => console.log(`Server launched on port ${port}`));
