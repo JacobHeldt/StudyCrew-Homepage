@@ -17,6 +17,7 @@ function SignUp() {
       const response = await axios.post('https://studycrew-homepage-backend.onrender.com/join-waitlist', { email });
       setMessage(response.data.message);
       setEmail(''); // Clear the input after successful operation
+      await fetchSpotsLeft();
     } catch (error) {
       setMessage('Failed to join waitlist. Please try again.');
     }
@@ -56,7 +57,7 @@ function SignUp() {
       <div className="user-email">
         <h2>Empowering <span>You</span></h2>
         <p className='subtitle'>Ready to Transform Your Learning Experience?</p>
-        <p className='spots-left'>{spotsLeft !== null ? `Spots left: ${spotsLeft}` : 'Loading spots...'}</p>
+        <p className='spots-left'>{spotsLeft !== null ? `Spots left for Version 1.0: ${spotsLeft}` : 'Loading spots...'}</p>
         <div className="email-input">
             <input
             type="email"
