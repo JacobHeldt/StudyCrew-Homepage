@@ -1,5 +1,5 @@
 /* Import React and necessary components */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Signup.css";
 import Button from '../Button/Button';
 import axios from 'axios';
@@ -24,7 +24,7 @@ function SignUp() {
 
   const fetchSpotsLeft = async () => {
     try {
-      const response = await axios.get('https://your-server.com/spots-left'); // Replace with your actual server URL
+      const response = await axios.get('https://studycrew-homepage-backend.onrender.com/spots-left'); // Replace with your actual server URL
       setSpotsLeft(response.data.spotsLeft);
     } catch (error) {
       console.error('Error fetching spots left:', error);
