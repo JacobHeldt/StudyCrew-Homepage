@@ -9,6 +9,7 @@ function SignUp() {
 
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [spotsLeft, setSpotsLeft] = useState(null);
 
   const handleJoinWaitlist = async () => {
     try {
@@ -20,6 +21,19 @@ function SignUp() {
       setMessage('Failed to join waitlist. Please try again.');
     }
   };
+
+  const fetchSpotsLeft = async () => {
+    try {
+      const response = await axios.get('https://your-server.com/spots-left'); // Replace with your actual server URL
+      setSpotsLeft(response.data.spotsLeft);
+    } catch (error) {
+      console.error('Error fetching spots left:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchSpotsLeft();
+  }, []);
   
   return (
     <div className='empower'>
@@ -42,6 +56,7 @@ function SignUp() {
       <div className="user-email">
         <h2>Empowering <span>You</span></h2>
         <p className='subtitle'>Ready to Transform Your Learning Experience?</p>
+        <p className='spots-left'>{spotsLeft !== null ? `Spots left: ${spotsLeft}` : 'Loading spots...'}</p>
         <div className="email-input">
             <input
             type="email"

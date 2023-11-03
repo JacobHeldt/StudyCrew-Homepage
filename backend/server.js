@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const compression = require('compression');
 
 const app = express();
+const MAX_SPOTS = 2500;
 
 // Security middleware
 app.use(helmet());
@@ -68,6 +69,31 @@ app.post('/join-waitlist', async (req, res) => {
     } catch (error) {
       console.error(error); // Log the full error
       res.status(500).json({ message: error.message, stack: error.stack });
+    }
+});
+
+const getTotalWaitlistCount = async () => {
+    try {
+      const count = await Waitlist.countDocuments();
+      return count;
+    } catch (error) {
+      console.error("Error fetching waitlist count:", error);
+      throw error; 
+    }
+};
+
+const getSpotsLeft = async () => {
+  const totalWaitlistCount = await getTotalWaitlistCount();
+  return MAX_SPOTS - totalWaitlistCount;
+};
+
+app.get('/spots-left', async (req, res) => {
+    try {
+      const spotsLeft = await getSpotsLeft();
+      res.status(200).json({ spotsLeft });
+    } catch (error) {
+      console.error(error); // Log the full error
+      res.status(500).json({ message: "Failed to fetch spots left", stack: error.stack });
     }
   });
 
