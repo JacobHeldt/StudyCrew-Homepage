@@ -3,12 +3,33 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const helmet = require('helmet');
+const compression = require('compression');
 
 const app = express();
 
+// Security middleware
+app.use(helmet());
+
+// Compression middleware
+app.use(compression());
+
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+
+// Cors Configuration for Production
+const whitelist = ['https://studycrew-homepage-preview.netlify.app/', 'studycrew.world']; // replace with your frontend domain
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
 
 // MongoDB URI
 const dbURI = process.env.DB_URI;
@@ -16,14 +37,14 @@ const dbURI = process.env.DB_URI;
 // Connect to MongoDB
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+  .catch(err => console.error(err));
 
 // Define a schema for the waitlist
 const WaitlistSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true, // Assumes email addresses should be unique in the waitlist
+    unique: true, 
   }
 });
 
@@ -47,6 +68,6 @@ app.post('/join-waitlist', async (req, res) => {
   }
 });
 
-// Set the port and start the server
-const port = process.env.PORT || 5000;
+// Start the server
+const port = process.env.PORT || 2023;
 app.listen(port, () => console.log(`Server started on port ${port}`));

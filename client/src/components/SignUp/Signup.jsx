@@ -1,10 +1,26 @@
 /* Import React and necessary components */
-import React from 'react';
+import React, { useState } from 'react';
 import "./Signup.css";
 import Button from '../Button/Button';
+import axios from 'axios';
 
 /* Define the Empower component */
 function SignUp() {
+
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleJoinWaitlist = async () => {
+    try {
+      // Perform input validation if needed
+      const response = await axios.post('http://localhost:2023/join-waitlist', { email });
+      setMessage(response.data.message);
+      setEmail(''); // Clear the input after successful operation
+    } catch (error) {
+      setMessage('Failed to join waitlist. Please try again.');
+    }
+  };
+  
   return (
     <div className='empower'>
         <div className="left-wing">
@@ -23,16 +39,21 @@ function SignUp() {
 
       <div className="blue-neon-mist signup-mist-1"></div>
 
-        <div className="user-email">
-            {/* Heading */}
-            <h2>Empowering <span>You</span></h2>
-            <p className='subtitle'>Ready to Transform Your Learning Experience?</p>
-            <div className="email-input">
-                {/* User input and Join button */}
-                <input type="text" placeholder='Enter your email'/>
-                <Button>Join WaitList</Button>
-            </div>
+      <div className="user-email">
+        <h2>Empowering <span>You</span></h2>
+        <p className='subtitle'>Ready to Transform Your Learning Experience?</p>
+        <div className="email-input">
+            <input
+            type="email"
+            placeholder='Enter your email'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            />
+            <Button onClick={handleJoinWaitlist}>Join WaitList</Button>
         </div>
+        {message && <p>{message}</p>}
+      </div>
+
         <div className="right-wing">
             {/* Right-wing SVG illustration */}
             <svg width="230" height="500" viewBox="0 0 633 1211" fill="none" xmlns="http://www.w3.org/2000/svg">
