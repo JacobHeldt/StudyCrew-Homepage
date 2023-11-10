@@ -1,44 +1,72 @@
-.faqs-head,.faqs-des{
+.faqs-head, .faqs-des {
     text-align: center;
 }
-.faqs-head span{
+
+.faqs-head span {
     text-transform: uppercase;
     color: #3A86FF;
 }
-.questions-list{
-    /* margin-left: auto; */
+
+.questions-list {
     padding: 0 150px;
     margin-top: 25px;
 }
-.question{
+
+.question {
     background-color: #EEF4FF;
     padding: 10px;
     border-radius: 7px;
     box-shadow: 0 2px 1px rgba(128, 128, 128, 0.472);
     margin-bottom: 15px;
+    transition: all 0.3s ease; /* Smooth transition for background and box-shadow */
 }
-.question[open] .question-head{
+
+.question[open] {
+    padding: 10px;
+    background-color: #FFF; /* Lighter background when open */
+    box-shadow: 0 4px 2px rgba(128, 128, 128, 0.472); /* Larger shadow when open */
+}
+
+.question[open] .question-head {
     padding-bottom: 5px;
-    border-bottom:0.5px black dashed;
-    
+    border-bottom: 0.5px black dashed;
 }
+
 .question-head {
     font-size: 1.2rem;
-    font-weight: bold;
-}
-.question-head:hover {
+    font-weight: 500;
     cursor: pointer;
 }
-.question-des{
+
+.question-des {
     padding: 5px 25px;
     text-align: left;
     list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease; /* Smooth transition for text */
+}
+
+details[open] .question-des {
+    max-height: 1000px; /* Set a max-height for the open state */
 }
 
 summary {
     padding: 4px 25px;
 }
 
-.question-head {
-    font-weight: 400;
+/* Remove the default arrow indicator provided by the browser */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Optional: adding a custom arrow indicator */
+summary::before {
+    font-size: 0.8em;
+    margin-right: 8px;
+    transition: transform 0.3s ease; /* Smooth rotation for arrow */
+}
+
+details[open] summary::before {
+    transform: rotate(90deg); /* Rotate arrow when open */
 }
