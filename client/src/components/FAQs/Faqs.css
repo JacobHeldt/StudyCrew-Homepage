@@ -22,7 +22,6 @@
 }
 
 .question[open] {
-    padding: 10px;
     background-color: #FFF; /* Lighter background when open */
     box-shadow: 0 4px 2px rgba(128, 128, 128, 0.472); /* Larger shadow when open */
 }
@@ -39,12 +38,13 @@
 }
 
 .question-des {
-    padding: 5px 25px;
+    padding: 20px 25px;
     text-align: left;
     list-style: none;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease; /* Smooth transition for text */
+    transition: max-height 0.3s ease;
+    font-size: 17px;
 }
 
 details[open] .question-des {
@@ -55,18 +55,7 @@ summary {
     padding: 4px 25px;
 }
 
-/* Remove the default arrow indicator provided by the browser */
-summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Optional: adding a custom arrow indicator */
-summary::before {
-    font-size: 0.8em;
-    margin-right: 8px;
-    transition: transform 0.3s ease; /* Smooth rotation for arrow */
-}
-
-details[open] summary::before {
-    transform: rotate(90deg); /* Rotate arrow when open */
+.faqs-heading {
+    width: 100%;
+    text-align: center;
 }
