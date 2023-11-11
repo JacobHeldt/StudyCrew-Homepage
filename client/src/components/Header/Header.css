@@ -36,7 +36,6 @@ header > * {
 .header-items > .logo-1 {
   width: 25px;
   height: 25px;
-  transform: none;
 }
 
 /* Styling for links inside header items */
@@ -90,7 +89,9 @@ header .navbar {
     position: relative;
     cursor: pointer;
     z-index: 100;
-    justify-self: start; /* Align to the left */
+    justify-self: start;
+    margin-left: 30px;
+    font-size: 25px;
   }
   .header-items svg {
     left: 50%;
@@ -123,14 +124,6 @@ header .navbar {
     align-items: center;
     justify-content: center; /* Centers the logo */
   }  
-  /* Join waitlist - always aligned to the right */
-.header-waitlist {
-  flex: 1; /* Flex grow to push adjacent elements to the sides */
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Aligns the waitlist button to the right */
-}
-
   /* Adjust header grid layout for mobile */
   header {
     display: grid;
@@ -140,24 +133,23 @@ header .navbar {
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 0 20px; /* Fixed margin on the sides */
-    height: 60px;
+    height: 70px;
     background-color: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(12px);
     box-shadow: 0 0 10px 0 #ddd;
   }
 
+  .waitlist-container Button {
+    background: none;
+    color: var(--primary-color);
+    margin-top: 4px;
+  }
+
   /* Styling for the logo container */
-.logo-container {
+.logo-1 {
   flex: 1;
   text-align: center;
   width: 100%;
-  }
-
-  /* Adjust SVG logo to be in the center of the logo container */
-  header-items .logo-1 {
-    left: 50%;
-    transform: translateX(-50%);
   }
 
   .waitlistLink {
@@ -165,24 +157,9 @@ header .navbar {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
+    margin-right: 30px;
   }
   
-
-  .mobile-navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-    position: fixed; /* Fixed to the viewport */
-    top: 0;
-    left: -100%; /* Start off-screen */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: white; /* Or any other background */
-    box-shadow: 2px 0px 5px rgba(0,0,0,0.2);
-    transition: left 0.3s ease; /* Smooth transition for sliding in */
-    z-index: 99;
-  }
   
   /* Toggle the mobile navbar */
   header .mobile-navbar.open {
