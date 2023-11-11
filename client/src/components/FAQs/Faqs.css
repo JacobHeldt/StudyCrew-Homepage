@@ -59,3 +59,12 @@ summary {
     width: 100%;
     text-align: center;
 }
+
+.faq-mist-1 {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    left: 300px;
+    top: 300px;
+    z-index: -1;
+}

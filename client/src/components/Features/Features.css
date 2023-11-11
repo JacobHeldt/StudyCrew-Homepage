@@ -217,3 +217,16 @@
         grid-auto-columns: calc((100%));
     }
 }
+
+.owl-carousel .cards::-webkit-scrollbar {
+    height: 10px;
+}
+
+.owl-carousel .cards::-webkit-scrollbar-thumb {
+    background: #959DA6; 
+    border-radius: 5px;
+}
+
+.owl-carousel .cards::-webkit-scrollbar-thumb:hover {
+    background: #434C59; 
+}

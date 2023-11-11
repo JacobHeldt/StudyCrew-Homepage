@@ -6,20 +6,13 @@ function Features() {
   const owlCarousel = useRef();
   const cardsContainer = useRef();
   const [cardWidth, setCardWidth] = useState(0);
-  const [index, setIndex] = useState(1);
-  const [limit, setLimit] = useState(6);
   const [currentStage, setCurrentStage] = useState('stage-1');
 
   // Handle clicks on stages for larger screens
   const accordian = (id) => {
-    setCurrentStage(id);
-    setIndex(1);            
+    setCurrentStage(id);       
     setCardWidth(0);
   
-    const stageData = stages.find(stage => stage.id === id);
-    if (stageData && stageData.limit) {
-      setLimit(stageData.limit);
-    }
 
     let ele = owlCarousel.current.children;
     switch (id) {
