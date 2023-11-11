@@ -2,7 +2,7 @@ import './Navbar.css'
 import { Link } from "react-router-dom";
 import React from 'react';
 
-const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef, teamRef, signupRef}) => {
+const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef, teamRef, signupRef, setIsMenuOpen}) => {
   
   // Helper function to determine if a link is active
   const isActive = name => activePage === name ? 'activeNavLink' : '';
@@ -14,6 +14,8 @@ const Navbar = ({activePage, setActivePage, missionRef, featuresRef, projectRef,
 
   // Handles the navigation link click based on the section's name
   const handleNavLinkClick = (name) => {
+    setIsMenuOpen(false);
+
     let ref;
     switch (name) {
         case 'mission':

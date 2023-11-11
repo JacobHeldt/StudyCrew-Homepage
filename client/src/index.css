@@ -128,3 +128,10 @@ p {
 .fade-in {
   animation: fadeIn 1s forwards;
 }
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%; /* Prevents the body from expanding */
+  width: 100%; /* Prevents the body from expanding */
+  position: fixed; /* Fixes the body position */
+}

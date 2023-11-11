@@ -42,3 +42,29 @@ nav > a.activeNavLink {
   margin-bottom: 0;
   border-bottom: solid 5px #3A86FF; /* Highlight bottom border for the active link */
 }
+
+@media (max-width: 768px) {
+  /* Styling for the navbar container on mobile */
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    width: 100vw; /* Full screen width */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 5000;
+  }
+
+  /* Styling for the navigation links on mobile */
+  nav > a {
+    width: 100%; /* Full width */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Adjust padding as needed */
+    border: none; /* Remove borders */
+  }
+}

@@ -5,13 +5,20 @@ import Navbar from '../Navbar/Navbar';
 import Button from '../Button/Button';
 import { useState } from 'react'; 
 import { FaBars } from 'react-icons/fa';
+import React, {useEffect} from 'react';
 
 
 const Header = ({ missionRef, featuresRef, projectRef, teamRef, signupRef, activePage, setActivePage }) => {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle menu
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [isMenuOpen]);
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
@@ -35,17 +42,18 @@ const Header = ({ missionRef, featuresRef, projectRef, teamRef, signupRef, activ
     
     {/* Conditionally render this div based on isMenuOpen state */}
     {isMenuOpen && (
-        <div className="mobile-navbar">
-          <Navbar
-            activePage={activePage}
-            setActivePage={setActivePage}
-            missionRef={missionRef}
-            featuresRef={featuresRef}
-            projectRef={projectRef}
-            teamRef={teamRef}
-            signupRef={signupRef}
-          />
-        </div>
+      <div className={`mobile-navbar ${isMenuOpen ? 'open' : ''}`}>
+        <Navbar
+          activePage={activePage}
+          setActivePage={setActivePage}
+          missionRef={missionRef}
+          featuresRef={featuresRef}
+          projectRef={projectRef}
+          teamRef={teamRef}
+          signupRef={signupRef}
+          setIsMenuOpen={setIsMenuOpen}
+        />
+      </div>
       )}
 
       {/* This will always be rendered, but hidden on mobile */}
