@@ -21,6 +21,7 @@
     left: 150px;
     top: 300px;
     z-index: -1;
+    overflow: hidden;
 }
 
 /* Main title styles */

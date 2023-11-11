@@ -1,13 +1,14 @@
 /* Styling for the header */
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 100;
-  width: 100vw;
-  height: 46px;
-  display: inline-grid;
-  grid-template-columns: 1fr fit-content(100%) 1fr;
-  grid-template-rows: 1fr;
+  padding: 0 10px; /* Adjust padding as needed */
+  height: 60px; /* Adjust the height as needed */
+  width: 100%;
 }
 
 /* Centering content inside the header */
@@ -60,4 +61,134 @@ header > * {
   /* color: #3A86FF; */
   /* border-bottom: solid 5px #3A86FF; */
   border-radius: 5px;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+/* Show regular navbar on larger screens */
+header .navbar {
+  display: block;
+}
+
+.logo-name {
+  display: block;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  /* Hide regular navbar on mobile screens */
+  header .navbar {
+    display: none;
+    position: sticky;
+  }
+
+  /* Show hamburger menu on mobile screens */
+  .hamburger-menu {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    z-index: 100;
+    justify-self: start; /* Align to the left */
+  }
+  .header-items svg {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo-name {
+    display: none;
+  }
+
+  .header-items {
+    justify-self: center; /* Align logo to the center */
+    flex-grow: 1;
+    justify-content: center;
+    background: none;
+    box-shadow: none;
+    padding: none;
+    backdrop-filter: none;
+  }
+
+  .hamburger-menu {
+    flex: 1; /* Flex grow to push adjacent elements to the sides */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns the hamburger menu to the left */
+  }  
+  .header-logo {
+    flex: 1; /* Flex grow to push adjacent elements to the sides */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the logo */
+  }  
+  /* Join waitlist - always aligned to the right */
+.header-waitlist {
+  flex: 1; /* Flex grow to push adjacent elements to the sides */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Aligns the waitlist button to the right */
+}
+
+  /* Adjust header grid layout for mobile */
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 20px; /* Fixed margin on the sides */
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 10px 0 #ddd;
+  }
+
+  /* Styling for the logo container */
+.logo-container {
+  flex: 1;
+  text-align: center;
+  width: 100%;
+  }
+
+  /* Adjust SVG logo to be in the center of the logo container */
+  header-items .logo-1 {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .waitlistLink {
+    justify-self: end; /* Align Join Waitlist to the right */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+
+  .mobile-navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    position: fixed; /* Fixed to the viewport */
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: white; /* Or any other background */
+    box-shadow: 2px 0px 5px rgba(0,0,0,0.2);
+    transition: left 0.3s ease; /* Smooth transition for sliding in */
+    z-index: 99;
+  }
+  
+  /* Toggle the mobile navbar */
+  header .mobile-navbar.open {
+    left: 0; /* Bring into view */
+  }
+  .desktop-navbar {
+    display: none;
+  }
 }
