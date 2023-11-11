@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'; // Removed useCallback
 import "./Features.css";
-import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
 import stages from '../../data/featureData';
 
 function Features() {
@@ -10,36 +9,6 @@ function Features() {
   const [index, setIndex] = useState(1);
   const [limit, setLimit] = useState(6);
   const [currentStage, setCurrentStage] = useState('stage-1');
-
-  // Function to handle scrolling left in the carousel
-  const scrollLeft = () => {
-    const cardWidth = cardsContainer.current.firstChild.offsetWidth;
-    let scrollValue = cardWidth + 322;  // default value
-
-    if (currentStage === 'stage-3') {
-      scrollValue = cardWidth + 30;  // adjust for stage 3
-    }
-
-    if (index > 1) {
-      setCardWidth(prevCardWidth => prevCardWidth + scrollValue); 
-      setIndex(prevIndex => prevIndex - 1);
-    }
-  };
-
-  // Function to handle scrolling right in the carousel
-  const scrollRight = () => {
-    const cardWidth = cardsContainer.current.firstChild.offsetWidth;
-    let scrollValue = cardWidth + 322;  // default value
-
-    if (currentStage === 'stage-3') {
-      scrollValue = cardWidth + 30;  // adjust for stage 3
-    }
-
-    if (limit > index) {
-      setCardWidth(prevCardWidth => prevCardWidth - scrollValue); 
-      setIndex(prevIndex => prevIndex + 1);
-    }
-  };
 
   // Handle clicks on stages for larger screens
   const accordian = (id) => {
@@ -112,11 +81,6 @@ function Features() {
                       <p className="card-description">{card.description}</p>
                     </div>
                   ))}
-                </div>
-
-                <div className="arrow-icons">
-                  <BsArrowLeftShort onClick={scrollLeft} size={50} className="arrow-left" />
-                  <BsArrowRightShort size={50} onClick={scrollRight} className="arrow-right" />
                 </div>
               </div>
             </React.Fragment>
