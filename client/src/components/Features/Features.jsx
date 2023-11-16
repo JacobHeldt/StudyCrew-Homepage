@@ -1,51 +1,18 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React, { useRef, useState, useEffect } from 'react'; // Removed useCallback
 import "./Features.css";
-import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
 import stages from '../../data/featureData';
 
 function Features() {
   const owlCarousel = useRef();
   const cardsContainer = useRef();
   const [cardWidth, setCardWidth] = useState(0);
-  const [index, setIndex] = useState(1);
-  const [limit, setLimit] = useState(6);
   const [currentStage, setCurrentStage] = useState('stage-1');
-
-  // Function to handle scrolling left in the carousel
-  const scrollLeft = () => {
-    const cardWidth = cardsContainer.current.firstChild.offsetWidth;
-    let scrollValue = cardWidth + 322;  // default value
-
-    if (currentStage === 'stage-3') {
-      scrollValue = cardWidth + 30;  // adjust for stage 3
-    }
-
-    if (index > 1) {
-      setCardWidth(prevCardWidth => prevCardWidth + scrollValue); 
-      setIndex(prevIndex => prevIndex - 1);
-    }
-  };
-
-  // Function to handle scrolling right in the carousel
-  const scrollRight = () => {
-    const cardWidth = cardsContainer.current.firstChild.offsetWidth;
-    let scrollValue = cardWidth + 322;  // default value
-
-    if (currentStage === 'stage-3') {
-      scrollValue = cardWidth + 30;  // adjust for stage 3
-    }
-
-    if (limit > index) {
-      setCardWidth(prevCardWidth => prevCardWidth - scrollValue); 
-      setIndex(prevIndex => prevIndex + 1);
-    }
-  };
 
   // Handle clicks on stages for larger screens
   const accordian = (id) => {
-    setCurrentStage(id);
-    setIndex(1);            
-    setCardWidth(0); 
+    setCurrentStage(id);       
+    setCardWidth(0);
+  
 
     let ele = owlCarousel.current.children;
     switch (id) {
@@ -70,22 +37,10 @@ function Features() {
     }
   }
 
-  // Reset carousel values on window resize
-  const resetValue = useCallback(() => {
-    if (currentStage === 'stage-3') {
-      setLimit(3);
-    } else {
-      setLimit(6);
-    }
-    setCardWidth(0);
-    setIndex(1);
-  }, [currentStage]);
-
   // On component mount
   useEffect(() => {
-    resetValue();
     accordian("stage-1"); 
-  }, [resetValue]);  
+  }, []);
 
   return (
     <div className="features">
@@ -119,11 +74,6 @@ function Features() {
                       <p className="card-description">{card.description}</p>
                     </div>
                   ))}
-                </div>
-
-                <div className="arrow-icons">
-                  <BsArrowLeftShort onClick={scrollLeft} size={50} className="arrow-left" />
-                  <BsArrowRightShort size={50} onClick={scrollRight} className="arrow-right" />
                 </div>
               </div>
             </React.Fragment>

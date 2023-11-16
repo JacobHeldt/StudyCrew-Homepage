@@ -1,10 +1,41 @@
 /* Import React and necessary components */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Signup.css";
 import Button from '../Button/Button';
+import axios from 'axios';
 
 /* Define the Empower component */
 function SignUp() {
+
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [spotsLeft, setSpotsLeft] = useState(null);
+
+  const handleJoinWaitlist = async () => {
+    try {
+      // Perform input validation if needed
+      const response = await axios.post('https://studycrew-homepage-backend.onrender.com/join-waitlist', { email });
+      setMessage(response.data.message);
+      setEmail(''); // Clear the input after successful operation
+      await fetchSpotsLeft();
+    } catch (error) {
+      setMessage('Failed to join waitlist. Please try again.');
+    }
+  };
+
+  const fetchSpotsLeft = async () => {
+    try {
+      const response = await axios.get('https://studycrew-homepage-backend.onrender.com/spots-left'); // Replace with your actual server URL
+      setSpotsLeft(response.data.spotsLeft);
+    } catch (error) {
+      console.error('Error fetching spots left:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchSpotsLeft();
+  }, []);
+  
   return (
     <div className='empower'>
         <div className="left-wing">
@@ -21,16 +52,24 @@ function SignUp() {
             </svg>           
         </div>
 
-        <div className="user-email">
-            {/* Heading */}
-            <h2>Empowering <span>You</span></h2>
-            <p className='subtitle'>Ready to Transform Your Learning Experience?</p>
-            <div className="email-input">
-                {/* User input and Join button */}
-                <input type="text" placeholder='Enter your email'/>
-                <Button>Join WaitList</Button>
-            </div>
+      <div className="blue-neon-mist signup-mist-1"></div>
+
+      <div className="user-email">
+        <h2>Empowering <span>You</span></h2>
+        <p className='subtitle'>Ready to Transform Your Learning Experience?</p>
+        <p className='spots-left'>{spotsLeft !== null ? `Spots left for Version 1.0: ${spotsLeft}` : 'Loading spots...'}</p>
+        <div className="email-input">
+            <input
+            type="email"
+            placeholder='Enter your email'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            />
+            <Button onClick={handleJoinWaitlist}>Join WaitList</Button>
         </div>
+        {message && <p>{message}</p>}
+      </div>
+
         <div className="right-wing">
             {/* Right-wing SVG illustration */}
             <svg width="230" height="500" viewBox="0 0 633 1211" fill="none" xmlns="http://www.w3.org/2000/svg">

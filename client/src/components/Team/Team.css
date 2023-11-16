@@ -8,8 +8,6 @@
 .team-component {
 	min-height: 1000px;
 	text-align: center;
-	/* overflow: hidden; */
-	/* height: auto; */
 	width: 100%;
 	margin-block: 100px;
 	margin-top: 100px;
@@ -21,7 +19,7 @@ h2 {
 	padding: 0;
 }
 
-p {
+.team-component p {
 	max-width: 800px;
 	margin: auto;
 	opacity: 0.7;
@@ -43,13 +41,10 @@ h5 {
 }
 
 .team-cards {
-	width: 90vw;
-	/* max-width: 950px; */
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	overflow-x: hidden; 
+	align-items: center;
 	gap: 30px;
-	margin: auto;
 }
 
 .team-cards img {
@@ -58,6 +53,7 @@ h5 {
 }
 
 .team-card {
+	flex: 0 0 auto; /* Adjust this to control the card width */
 	padding: 10px;
 	padding-block: 50px;
 	margin: 10px;
@@ -68,7 +64,10 @@ h5 {
 	background: rgba(255, 255, 255, 0.7);
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 	backdrop-filter: blur(25px);
-	/* max-width: 150px; */
+}
+
+.team-card img, .team-card h5, .team-card p {
+    flex-shrink: 0;
 }
 
 .join-team-section {
@@ -85,4 +84,17 @@ h5 {
 .join-team-button {
 	position: relative;
 	top: 1500px;
+}
+
+.team-cards::-webkit-scrollbar {
+    height: 10px;
+}
+
+.team-cards::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 5px;
+}
+
+.team-cards::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }

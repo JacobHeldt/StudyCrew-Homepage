@@ -7,6 +7,7 @@ Welcome to the GitHub repository for our homepage. This repository hosts the sou
 
 ## About StudyCrew
 We build an online platform aiming to make education more accessible, collaborative, and engaging. Through our homepage, people can gain more insights into the project, including planned features, our mission, and our team.
+For more information or inquiries, reach out to us at [development@studycrew.world](mailto:development@studycrew.world).
 
 ## Contributing
 While this repository is specifically for the homepage, we always welcome feedback and suggestions.

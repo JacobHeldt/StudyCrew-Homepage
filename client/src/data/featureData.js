@@ -62,6 +62,7 @@ const stages = [
         },
         
       ],
+      limit: 6
     },
     {
       id: 'stage-2',
@@ -103,8 +104,8 @@ const stages = [
           title: 'Multilingual Support',
           description: "Unlock global learning possibilities with multilingual support. No matter the language you speak, we want to ensure that your educational journey is seamless and inclusive.",
         },
-        // ... more cards for stage 2
       ],
+      limit: 6
     },
     {
         id: 'stage-3',
@@ -132,6 +133,7 @@ const stages = [
             description: "This feature allows all users to come together virtually. Tailored for community-building and educational enrichment, this space allows participants to interact, share knowledge, and foster connections in a live virtual environment.",
           },
         ],
+        limit: 3      
       },
   ];
   
