@@ -110,3 +110,23 @@
     left: 22%;
     transform: rotate(30deg);
 }
+@media screen and (max-width: 750px) {
+    .right-column{
+        display: none;
+    }
+    .left-column{
+        width: 100%;
+    }
+   
+}
+@media screen and (max-width: 500px) {
+
+    .left-column{
+        top: -70px;
+    }
+    .main-div{
+        padding: 0px 20px;
+        height: 60dvh;
+    }
+   
+}
