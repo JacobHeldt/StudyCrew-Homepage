@@ -33,3 +33,19 @@
     position: relative;
     top: -220px;
 }
+
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+@media (max-width: 768px) { 
+    .header {
+        position: fixed !important;
+        top: 0;
+        width: 100vw;
+        z-index: 200;
+    }    
+}

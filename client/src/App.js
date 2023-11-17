@@ -110,16 +110,18 @@ function App() {
   return (
     <Router>
       {/* Header with page navigation props */}
-      <Header 
-        missionRef={missionRef} 
-        featuresRef={featuresRef} 
-        projectRef={projectRef}
-        teamRef={teamRef}
-        signupRef={signupRef}
-        faqRef={faqRef}
-        activePage={activePage}
-        setActivePage={setActivePage}
-      />
+      <div className="header">
+        <Header 
+          missionRef={missionRef} 
+          featuresRef={featuresRef} 
+          projectRef={projectRef}
+          teamRef={teamRef}
+          signupRef={signupRef}
+          faqRef={faqRef}
+          activePage={activePage}
+          setActivePage={setActivePage}
+        />
+      </div>
 
       {/* Various site sections */}
       <FadingHero id="hero" delay={100} />
