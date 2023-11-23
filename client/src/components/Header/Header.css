@@ -3,7 +3,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* position: sticky; */
+  position: sticky;
   top: 0;
   z-index: 100;
   padding: 0 10px; /* Adjust padding as needed */
@@ -82,10 +82,6 @@ header .navbar {
   transition: transform 3s ease;
 }
 
-.header-items {
-  backdrop-filter: none;
-}
-
   /* Initial state of the mobile navbar - off-screen */
 .mobile-navbar {
   position: fixed;
@@ -106,13 +102,12 @@ header .navbar {
 }
 /* Media query for mobile screens */
 @media (max-width: 768px) {
+  /* Hide regular navbar on mobile screens */
+  header .navbar {
+    display: none;
+    position: sticky;
+  }
 
-  .header-items {
-    background: none;
-  }
-  .logo {
-    background: none;
-  }
   /* Show hamburger menu on mobile screens */
   .hamburger-menu {
     display: block;
@@ -159,6 +154,7 @@ header .navbar {
     grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
     align-items: center;
     justify-content: space-between;
+    position: sticky;
     top: 0;
     z-index: 100;
     height: 70px;
