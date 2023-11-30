@@ -10,6 +10,9 @@ import melody from "../assets/avatars/melody.svg";
 import dew from "../assets/avatars/dew.svg";
 import aiya from "../assets/avatars/aiya.svg";
 import sarah from "../assets/avatars/sarah.svg";
+import vishal from "../assets/avatars/vishal.svg";
+import kyle from "../assets/avatars/kyle.svg";
+
 
 const teamMembers = [
   {
@@ -53,6 +56,11 @@ const teamMembers = [
     avatar: melody
   },
   {
+    name: "Vishal",
+    role: "Development",
+    avatar: vishal
+  },
+  {
     name: "Aiya",
     role: "Product Management",
     avatar: aiya
@@ -61,6 +69,11 @@ const teamMembers = [
     name: "Sarah",
     role: "UI/UX Design",
     avatar: sarah
+  },
+  {
+    name: "Kyle",
+    role: "Lead Developer",
+    avatar: kyle
   },
 ];
 
