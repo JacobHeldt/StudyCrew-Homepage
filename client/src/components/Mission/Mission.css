@@ -126,7 +126,25 @@
     }
     .main-div{
         padding: 0px 20px;
-        height: 60dvh;
+        width: auto;
+        height: 457px;
     }
-   
-}
+    .main-div p {
+        font-size: 15px;
+        letter-spacing: 0.1px;
+        font-weight: 400;
+        align-content: center;
+     }
+     .main-div h2 {
+        font-weight: 500;
+        font-size: 36px;
+        font-family: var(--heading-font);
+     }
+     .main-div h3 {
+        font-size: 13px;
+     }
+
+     .right-column {
+        display: none;
+     }
+}  

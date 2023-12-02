@@ -1,6 +1,7 @@
 /* Flex container to center child elements */
 .empower {
     display: flex;
+    flex-direction: column; /* Stack items vertically on small screens */
     justify-content: center;
     align-items: center;
 }
@@ -8,12 +9,12 @@
 /* Email sign-up container styles */
 .user-email {
     text-align: center;
-    margin: 0 -120px;  /* Negative margin for design aesthetics */
+    margin: 0 -20px; /* Reduced negative margin for better responsiveness */
 }
 
 /* Additional margin for the heading */
 .user-email h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduced margin for better responsiveness */
 }
 
 /* Highlight color for specific parts of the heading */
@@ -25,6 +26,7 @@
 .user-email .email-input {
     position: relative;
     display: flex;
+    flex-direction: column; /* Stack items vertically */
     justify-content: center;
     align-items: center;
     margin-top: 15px;
@@ -32,9 +34,9 @@
 
 /* Styling for the email input field */
 .user-email .email-input input {
-    margin-right: -4%;
+    margin-bottom: 10px; /* Added margin for better spacing */
     font-size: 16px;
-    padding: 9px 60px 9px 20px; 
+    padding: 10px; /* Adjusted padding for better spacing */
     min-width: 220px;
     background-color: white;
 }
@@ -58,7 +60,7 @@
 /* Negative margin for wings to achieve a specific design aesthetic */
 .left-wing,
 .right-wing {
-    margin-bottom: -120px;
+    margin-bottom: -20px; /* Reduced negative margin for better responsiveness */
 }
 
 /* Media query to hide wings on small screens */
@@ -69,22 +71,37 @@
     }
 }
 
+@media screen and (max-width: 500px) {
+    .user-email h2 {
+        font-size: 24px; /* Adjusted font size for smaller screens */
+    }
+
+    .user-email p {
+        font-size: 14px; /* Adjusted font size for smaller screens */
+        max-width: 276px;
+    }
+
+    .user-email .email-input {
+        width: 100%; /* Make the input full width on smaller screens */
+    }
+}
+
 /* Styling for section subtitle */
 .subtitle {
     position: relative;
-    width: 40vw;
-    left: 0; 
+    width: 80vw; /* Adjusted width for better responsiveness */
     text-align: center;
-    top: -10px; 
-    margin: 0 50px;
-    color: var(--secondary-text-color); 
+    top: -10px;
+    margin: 0 20px; /* Adjusted margin for better responsiveness */
+    color: var(--secondary-text-color);
 }
 
 .signup-mist-1 {
     position: absolute;
-    height: 400px;
-    width: 400px;
-    left: 550px;
-    top: 300px;
+    height: 200px; /* Adjusted height for better responsiveness */
+    width: 200px; /* Adjusted width for better responsiveness */
+    left: 50%; /* Center the element horizontally */
+    top: 50%; /* Center the element vertically */
+    transform: translate(-50%, -50%); /* Center the element both horizontally and vertically */
     z-index: -1;
 }

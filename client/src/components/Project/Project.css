@@ -1,3 +1,4 @@
+
 /* Main container for the project section with a gradient background */
 .project-main-div {
     position: relative;
@@ -33,28 +34,43 @@
    padding:0 150px;
 }
 
-/* Styles for the project description text */
-@media screen and (max-width:1120px){
-.project-text {
-    margin-top:-70px;
+@media screen and (max-width: 1120px) {
+    .project-text {
+        margin-top: -70px;
+    }
 }
-}
-@media screen and (max-width:720px){
+
+@media screen and (max-width: 720px) {
     .project-main-div {
-        display:block;
-        height:500px;
+        height: auto;
+        padding: 50px 15px; /* Adjust padding for smaller screens */
     }
     .project-left-column {
         width: 100%;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        padding:0 15px;
+        padding: 0 15px;
     }
     .project-right-column {
-        display:none;
+        display: none; /* Hide the right column on smaller screens */
     }
 }
+
+@media screen and (max-width: 500px) {
+    .project-main-div {
+        align-items: center;
+        height: auto;
+        padding: 50px 15px; /* Adjust padding for smaller screens */
+    }
+    .project-main-div h3 {
+        font-size: 13px;
+    }
+    .project-main-div h2 {
+        font-size: 31px;
+    }
+    .project-main-div p {
+        font-size: 15px;
+    }
+}
+
 
 /* Subtitle overlay on the project image with blur effect */
 .project-image-subtitle {
