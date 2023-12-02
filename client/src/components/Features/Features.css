@@ -182,7 +182,7 @@
         max-height: 100%;
     }
     .card-description {
-        /* max-width: 50%; */
+        max-width: 50%;
     }
     .container {
         justify-content: center;
@@ -196,8 +196,8 @@
         user-select: none;
     }
     .card-image {
-        /* width:50%; */
-        /* height: 25%; */
+        width:50%; 
+        height: 25%;
     }
     .owl-carousel-wrapper {
         border-radius: 20px;
