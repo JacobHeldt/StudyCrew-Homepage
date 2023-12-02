@@ -12,6 +12,7 @@ import aiya from "../assets/avatars/aiya.svg";
 import sarah from "../assets/avatars/sarah.svg";
 import vishal from "../assets/avatars/vishal.svg";
 import kyle from "../assets/avatars/kyle.svg";
+import zai from "../assets/avatars/zai.svg";
 
 
 const teamMembers = [
@@ -61,6 +62,11 @@ const teamMembers = [
     avatar: vishal
   },
   {
+    name: "Kyle",
+    role: "Lead Developer",
+    avatar: kyle
+  },
+  {
     name: "Aiya",
     role: "Product Management",
     avatar: aiya
@@ -71,9 +77,9 @@ const teamMembers = [
     avatar: sarah
   },
   {
-    name: "Kyle",
-    role: "Lead Developer",
-    avatar: kyle
+    name: "Zai",
+    role: "Developer",
+    avatar: zai
   },
 ];
 
