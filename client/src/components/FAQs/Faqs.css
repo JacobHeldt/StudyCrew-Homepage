@@ -9,7 +9,7 @@
 }
 
 .questions-list {
-    padding: 0 20px; /* Adjust padding for smaller screens */
+    padding: 0 150px; /* Adjust padding for smaller screens */
     margin-top: 25px;
 }
 
@@ -74,7 +74,7 @@ summary {
 /* Media query for smaller screens */
 @media screen and (max-width: 600px) {
     .questions-list {
-        padding: 0 10px; /* Adjust padding for smaller screens */
+        padding: 0 20px;
     }
 
     .faq-mist-1 {
