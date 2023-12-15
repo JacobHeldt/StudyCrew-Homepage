@@ -148,3 +148,11 @@
         display: none;
      }
 }  
+
+@media screen and (max-width: 360px){
+    .left-column {
+      width: 100%;
+    }
+    
+  }
+  
