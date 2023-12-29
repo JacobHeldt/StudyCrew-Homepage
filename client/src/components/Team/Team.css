@@ -98,3 +98,15 @@ h5 {
 .team-cards::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+.heading {
+	font-size: 33px;
+	font-weight: 500;
+}
+.head-title p {
+	font-size: 17px;
+	font-weight: 400;
+}
+}
+

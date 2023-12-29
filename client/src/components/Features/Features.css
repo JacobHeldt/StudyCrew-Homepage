@@ -211,22 +211,63 @@
     }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 600px) {
     /* Adjusted styles for smaller screens */
+
     .owl-carousel .cards {
-        grid-auto-columns: calc((100%));
+        grid-auto-columns: calc(225.33px + 10px); /* 10px is for margin between cards */
+        padding: 2px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .card {
+        flex: 0 0 auto;
+        width: 225.33px; /* Fixed width for mobile */
+        height: 303px; /* Fixed height for mobile */
+        scroll-snap-align: start;
+        box-sizing: border-box;
+        margin-right: 10px; /* Add margin between cards if needed */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px; /* Adjust padding as needed */
+        font-size: 14px; /* Adjust base font size */
+    }
+
+    .card-image {
+        /* Adjusted styles for the card image */
+        display: block;
+        height: 100px; /* Adjust height as needed */
+        width: auto;
+        max-width: 100%;
+        margin: auto;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-bottom: 10px; /* Adjust as needed */
+    }
+
+    .card-title {
+        /* Adjusted styles for the card title */
+        font-size: 16px; /* Adjust as needed */
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .card-description {
+        /* Adjusted styles for the card description */
+        font-size: 14px;
+        color: var(--secondary-text-color);
+    }
+
+    .owl-carousel .cards::-webkit-scrollbar {
+        display: none; /* Hide the scrollbar on mobile */
+    }
+
+    .arrow-icons {
+        display: none; /* Hide arrows on mobile */
     }
 }
 
-.owl-carousel .cards::-webkit-scrollbar {
-    height: 10px;
-}
-
-.owl-carousel .cards::-webkit-scrollbar-thumb {
-    background: #959DA6; 
-    border-radius: 5px;
-}
-
-.owl-carousel .cards::-webkit-scrollbar-thumb:hover {
-    background: #434C59; 
-}

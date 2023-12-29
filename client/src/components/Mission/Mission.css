@@ -11,14 +11,14 @@
     /* top: 400px; */
     height: 200px;
     width: 100vw;
-    z-index: 5;
+    z-index: -1;
 }
 
 /* White background for the chevron */
 .chevron-white {
     position: absolute;
     height: 200px;
-    z-index: 3;
+    z-index: 2;
     top: 50px;
 }
 
@@ -27,7 +27,7 @@
     position: absolute;
     height: 200px;
     top: 100px;
-    z-index: 5;
+    z-index: 1; /*send the Z-index to back so The header can be shown */
 }
 
 /* Gradient color definitions for the chevron */
@@ -63,6 +63,7 @@
     position: relative;
     top: 20vh;
     margin-right: 5%;
+    z-index: 5;
 }
 
 /* Left column of the main content */
@@ -139,6 +140,7 @@
         font-weight: 500;
         font-size: 36px;
         font-family: var(--heading-font);
+        z-index: 5;
      }
      .main-div h3 {
         font-size: 13px;
