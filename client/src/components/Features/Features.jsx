@@ -46,7 +46,7 @@ function Features() {
     <div className="features">
       <div className="features-head">
         <h2>Our <span>Features</span></h2>
-        <p className="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo at a dolor voluptatum.</p>
+        <p className="des">A brief list of features we plan to offer at different stages</p>
       </div>
       <div className="container">
         <div className="stages">
